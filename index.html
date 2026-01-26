@@ -1,86 +1,360 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Maestro Antigravity - 150 Estilos</title>
+    <title>Catálogo Maestro Antigravity - Más de 100estilos</title>
     <style>
-        :root { --bg: #121212; --card: #1e1e1e; --text: #e0e0e0; --accent: #ffcc00; --accent-dim: #997a00; --border: #333; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; display: flex; height: 100vh; overflow: hidden; }
-        
-        /* SIDEBAR */
-        #sidebar { width: 320px; background: var(--card); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; box-shadow: 4px 0 15px rgba(0,0,0,0.3); z-index: 10; }
-        
-        .sidebar-header { padding: 20px; border-bottom: 1px solid var(--border); background: #1a1a1a; }
-        .sidebar-header h2 { margin: 0; font-size: 1.2rem; color: #fff; letter-spacing: 1px; }
-        .sidebar-header p { margin: 5px 0 0; font-size: 0.8rem; color: #888; }
+        :root {
+            --bg: #121212;
+            --card: #1e1e1e;
+            --text: #e0e0e0;
+            --accent: #ffcc00;
+            --accent-dim: #997a00;
+            --border: #333;
+        }
 
-        .scroll-area { overflow-y: auto; flex: 1; padding: 20px; scrollbar-width: thin; scrollbar-color: var(--border) var(--bg); }
-        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* SIDEBAR */
+        #sidebar {
+            width: 320px;
+            background: var(--card);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+            background: #1a1a1a;
+        }
+
+        .sidebar-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-header p {
+            margin: 5px 0 0;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .scroll-area {
+            overflow-y: auto;
+            flex: 1;
+            padding: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) var(--bg);
+        }
+
         /* SECCIÓN: CATEGORÍAS (CHECKBOXES) */
-        .filter-section { margin-bottom: 25px; }
-        .section-title { font-size: 0.75rem; text-transform: uppercase; color: var(--accent); font-weight: bold; margin-bottom: 10px; letter-spacing: 1px; display: block; }
-        
-        .checkbox-group { display: flex; flex-direction: column; gap: 8px; }
-        .checkbox-label { display: flex; align-items: center; cursor: pointer; font-size: 0.9rem; transition: color 0.2s; padding: 4px 0; }
-        .checkbox-label:hover { color: #fff; }
-        .checkbox-label input { margin-right: 10px; accent-color: var(--accent); transform: scale(1.2); cursor: pointer; }
-        
+        .filter-section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            padding: 4px 0;
+        }
+
+        .checkbox-label:hover {
+            color: #fff;
+        }
+
+        .checkbox-label input {
+            margin-right: 10px;
+            accent-color: var(--accent);
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
         /* SECCIÓN: SLIDERS */
-        .slider-group { margin-bottom: 12px; }
-        .slider-header { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px; color: #ccc; }
-        .slider-val { color: var(--accent); font-weight: bold; }
-        input[type="range"] { width: 100%; height: 4px; background: #444; border-radius: 2px; -webkit-appearance: none; cursor: grab; }
-        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; background: var(--text); border-radius: 50%; border: 2px solid var(--accent); transition: background 0.2s; }
-        input[type="range"]::-webkit-slider-thumb:hover { background: var(--accent); }
+        .slider-group {
+            margin-bottom: 12px;
+        }
+
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+            color: #ccc;
+        }
+
+        .slider-val {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 4px;
+            background: #444;
+            border-radius: 2px;
+            -webkit-appearance: none;
+            cursor: grab;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--text);
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            transition: background 0.2s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: var(--accent);
+        }
 
         /* FOOTER SIDEBAR */
-        .sidebar-footer { padding: 20px; border-top: 1px solid var(--border); background: #1a1a1a; text-align: center; }
-        button#reset { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.2s; width: 100%; }
-        button#reset:hover { background: var(--accent); color: #000; }
+        .sidebar-footer {
+            padding: 20px;
+            border-top: 1px solid var(--border);
+            background: #1a1a1a;
+            text-align: center;
+        }
+
+        button#reset {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+            width: 100%;
+        }
+
+        button#reset:hover {
+            background: var(--accent);
+            color: #000;
+        }
 
         /* GRID PRINCIPAL */
-        #main-area { flex: 1; padding: 20px; overflow-y: auto; background: var(--bg); position: relative; }
-        #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; padding-bottom: 40px; }
-        
-        /* TARJETAS */
-        .card { background: #252525; border-radius: 8px; overflow: hidden; border: 1px solid #333; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); border-color: var(--accent-dim); }
-        
-        .img-box { height: 160px; background: #000; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s; }
-        .missing { color: #555; font-size: 0.7rem; text-align: center; line-height: 1.4; padding: 10px; }
-        
-        .tag-group { position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,0.7); color: #fff; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; text-transform: uppercase; border: 1px solid #555; }
-        .score-match { position: absolute; top: 8px; right: 8px; background: var(--accent); color: #000; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        #main-area {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: var(--bg);
+            position: relative;
+        }
 
-        .info { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
-        .info h3 { margin: 0; font-size: 1rem; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .info p { margin: 0; font-size: 0.8rem; color: #aaa; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        
-        .prompt-box { background: #111; padding: 6px; border-radius: 4px; margin-top: auto; border: 1px solid #333; cursor: pointer; transition: border-color 0.2s; position: relative; }
-        .prompt-box:hover { border-color: var(--accent); }
-        .prompt-text { font-family: monospace; font-size: 0.7rem; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
-        .prompt-tooltip { display: none; position: absolute; bottom: 100%; left: 0; right: 0; background: #222; border: 1px solid var(--accent); color: #ddd; padding: 8px; font-size: 0.75rem; z-index: 20; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.8); white-space: normal; }
-        .prompt-box:hover .prompt-tooltip { display: block; }
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            padding-bottom: 40px;
+        }
+
+        /* TARJETAS */
+        .card {
+            background: #252525;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent-dim);
+        }
+
+        .img-box {
+            height: 160px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+
+        .missing {
+            color: #555;
+            font-size: 0.7rem;
+            text-align: center;
+            line-height: 1.4;
+            padding: 10px;
+        }
+
+        .tag-group {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            border: 1px solid #555;
+        }
+
+        .score-match {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--accent);
+            color: #000;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .info {
+            padding: 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .info h3 {
+            margin: 0;
+            font-size: 1rem;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .info p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #aaa;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .prompt-box {
+            background: #111;
+            padding: 6px;
+            border-radius: 4px;
+            margin-top: auto;
+            border: 1px solid #333;
+            cursor: pointer;
+            transition: border-color 0.2s;
+            position: relative;
+        }
+
+        .prompt-box:hover {
+            border-color: var(--accent);
+        }
+
+        .prompt-text {
+            font-family: monospace;
+            font-size: 0.7rem;
+            color: var(--accent);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+        }
+
+        .prompt-tooltip {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            background: #222;
+            border: 1px solid var(--accent);
+            color: #ddd;
+            padding: 8px;
+            font-size: 0.75rem;
+            z-index: 20;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            white-space: normal;
+        }
+
+        .prompt-box:hover .prompt-tooltip {
+            display: block;
+        }
 
         /* Empty State */
-        #no-results { grid-column: 1 / -1; text-align: center; padding: 50px; color: #666; font-style: italic; }
+        #no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 50px;
+            color: #666;
+            font-style: italic;
+        }
     </style>
 </head>
+
 <body>
 
     <aside id="sidebar">
         <div class="sidebar-header">
             <h2>Antigravity<span style="color:var(--accent)">Catalog</span></h2>
-            <p>150 Estilos Maestros</p>
+            <p>Más de 100 Estilos Maestros</p>
         </div>
-        
+
         <div class="scroll-area">
             <div class="filter-section">
                 <span class="section-title">Filtrar por Grupo</span>
                 <div id="group-filters" class="checkbox-group">
-                    </div>
+                </div>
             </div>
 
             <hr style="border:0; border-top:1px solid #333; margin: 20px 0;">
@@ -88,7 +362,7 @@
             <div class="filter-section">
                 <span class="section-title">Afinar por Cualidad (0-5)</span>
                 <div id="sliders-container">
-                    </div>
+                </div>
             </div>
         </div>
 
@@ -101,286 +375,286 @@
         <div id="grid"></div>
     </main>
 
-<script>
-// --- DATOS MAESTROS (150 Estilos con Grupos Asignados) ---
-// G1: Pintura, G2: Cómic, G3: Diseño, G4: Mensaje, G5: Cine/Anim, G6: Materiales
-const groups = {
-    G1: "Maestros de la Pintura",
-    G2: "Cómic y Manga",
-    G3: "Diseño y Publicidad",
-    G4: "Arte con Mensaje",
-    G5: "Cine y Animación",
-    G6: "Materiales y Foto 3D"
-};
+    <script>
+        // --- DATOS MAESTROS (150 Estilos con Grupos Asignados) ---
+        // G1: Pintura, G2: Cómic, G3: Diseño, G4: Mensaje, G5: Cine/Anim, G6: Materiales
+        const groups = {
+            G1: "Maestros de la Pintura",
+            G2: "Cómic y Manga",
+            G3: "Diseño y Publicidad",
+            G4: "Arte con Mensaje",
+            G5: "Cine y Animación",
+            G6: "Materiales y Foto 3D"
+        };
 
-const styles = [
-    // G1: PINTURA
-    { id: "vangogh", group: "G1", name: "Van Gogh", prompt: "Oil painting style of Van Gogh, starry night swirls, thick impasto, vibrant blue and yellow", desc: "Post-impresionismo, pincelada visible.", s: [5,2,5,3,4,5,4,5,0,0] },
-    { id: "dali", group: "G1", name: "Salvador Dalí", prompt: "Surrealist painting by Salvador Dali, melting clocks, desert landscape, dreamlike, hyperrealistic", desc: "Surrealismo onírico, objetos derretidos.", s: [3,1,3,4,5,4,5,5,2,3] },
-    { id: "rembrandt", group: "G1", name: "Rembrandt", prompt: "Baroque painting by Rembrandt, chiaroscuro lighting, dramatic shadows, deep browns, realistic", desc: "Barroco, claroscuro dramático.", s: [1,0,4,4,5,4,3,5,0,0] },
-    { id: "picasso_cub", group: "G1", name: "Picasso (Cubismo)", prompt: "Cubist painting by Pablo Picasso, fragmented geometric shapes, abstract faces, multiple perspectives", desc: "Cubismo, geometría fragmentada.", s: [3,1,2,2,4,4,5,5,1,1] },
-    { id: "monet", group: "G1", name: "Claude Monet", prompt: "Impressionist painting by Claude Monet, water lilies, dappled light, loose brushstrokes, pastel colors", desc: "Impresionismo, luz difusa.", s: [4,4,3,4,2,3,3,5,0,0] },
-    { id: "klimt", group: "G1", name: "Gustav Klimt", prompt: "Art style of Gustav Klimt, gold leaf textures, mosaic patterns, erotic symbolism, rich ornamentation", desc: "Simbolismo, pan de oro, mosaicos.", s: [5,3,5,4,3,4,4,4,0,0] },
-    { id: "hopper", group: "G1", name: "Edward Hopper", prompt: "Oil painting by Edward Hopper, american realism, solitude, cinematic lighting, urban isolation", desc: "Realismo americano, soledad, luz dura.", s: [2,0,4,5,4,3,3,4,0,1] },
-    { id: "basquiat", group: "G1", name: "J.M. Basquiat", prompt: "Neo-expressionist by Basquiat, graffiti style, skulls, crowns, chaotic composition, scrawled text", desc: "Neo-expresionismo, caos urbano.", s: [4,1,5,1,4,5,5,4,0,3] },
-    { id: "kahlo", group: "G1", name: "Frida Kahlo", prompt: "Style of Frida Kahlo, naive surrealism, vibrant mexican colors, foliage background, self-portrait style", desc: "Surrealismo naif, folclore mexicano.", s: [5,2,5,3,4,5,4,4,0,1] },
-    { id: "hokusai", group: "G1", name: "Hokusai (Ukiyo-e)", prompt: "Ukiyo-e woodblock print, great wave style, flat colors, heavy outlines, mount fuji, japanese traditional", desc: "Grabado japonés, líneas marcadas.", s: [3,2,3,5,2,3,4,5,0,0] },
-    { id: "magritte", group: "G1", name: "René Magritte", prompt: "Surrealist art by Magritte, man in bowler hat, floating objects, blue sky with clouds, conceptual", desc: "Surrealismo conceptual.", s: [2,1,1,3,4,2,4,4,2,4] },
-    { id: "matisse", group: "G1", name: "Henri Matisse", prompt: "Matisse paper cutouts style, abstract collage, vibrant primary colors, simple organic shapes, dancing figures", desc: "Fauvismo, recortes de papel.", s: [5,5,2,2,1,4,4,4,0,0] },
-    { id: "kandinsky", group: "G1", name: "Wassily Kandinsky", prompt: "Abstract art by Kandinsky, geometric composition, circles and lines, synesthesia, colorful musicality", desc: "Abstracción geométrica y lírica.", s: [5,3,4,1,3,4,3,3,0,0] },
-    { id: "pollock", group: "G1", name: "Jackson Pollock", prompt: "Action painting by Jackson Pollock, drip painting, chaotic splatters, tangled lines, abstract expressionism", desc: "Action painting, caos abstracto.", s: [3,1,4,1,3,5,4,4,0,0] },
-    { id: "turner", group: "G1", name: "J.M.W. Turner", prompt: "Oil painting by J.M.W. Turner, atmospheric storm, blurred landscape, light and mist, romanticism", desc: "Romanticismo, atmósferas difusas.", s: [4,2,5,3,4,5,3,3,0,0] },
-    { id: "bosch", group: "G1", name: "El Bosco", prompt: "Hieronymus Bosch style, garden of earthly delights, detailed chaos, fantastic creatures, medieval surrealism", desc: "Surrealismo medieval, caos detallado.", s: [4,1,2,2,5,3,5,3,2,2] },
-    { id: "elgreco", group: "G1", name: "El Greco", prompt: "El Greco painting style, elongated figures, dramatic expressionism, dark moody clouds, religious mysticism", desc: "Manierismo, figuras alargadas.", s: [2,1,4,3,4,5,3,3,0,0] },
-    { id: "goya", group: "G1", name: "Francisco de Goya", prompt: "Black paintings by Goya, dark atmosphere, grotesque faces, haunting expressionism, loose brushwork", desc: "Pinturas negras, atmósfera oscura.", s: [1,0,5,3,5,5,4,4,1,2] },
-    { id: "modigliani", group: "G1", name: "Amedeo Modigliani", prompt: "Portrait by Modigliani, elongated necks, blank eyes, warm tones, bohemian style, linear elegance", desc: "Figuras alargadas, ojos vacíos.", s: [3,1,3,4,2,3,3,3,0,0] },
-    { id: "seurat", group: "G1", name: "Georges Seurat", prompt: "Pointillism painting by Seurat, composed of millions of tiny dots, optical color mixing, sunday afternoon park", desc: "Puntillismo, mezcla óptica.", s: [4,3,1,3,2,2,3,4,0,0] },
+        const styles = [
+            // G1: PINTURA
+            { id: "vangogh", group: "G1", name: "Van Gogh", prompt: "Oil painting style of Van Gogh, starry night swirls, thick impasto, vibrant blue and yellow", desc: "Post-impresionismo, pincelada visible.", s: [5, 2, 5, 3, 4, 5, 4, 5, 0, 0] },
+            { id: "dali", group: "G1", name: "Salvador Dalí", prompt: "Surrealist painting by Salvador Dali, melting clocks, desert landscape, dreamlike, hyperrealistic", desc: "Surrealismo onírico, objetos derretidos.", s: [3, 1, 3, 4, 5, 4, 5, 5, 2, 3] },
+            { id: "rembrandt", group: "G1", name: "Rembrandt", prompt: "Baroque painting by Rembrandt, chiaroscuro lighting, dramatic shadows, deep browns, realistic", desc: "Barroco, claroscuro dramático.", s: [1, 0, 4, 4, 5, 4, 3, 5, 0, 0] },
+            { id: "picasso_cub", group: "G1", name: "Picasso (Cubismo)", prompt: "Cubist painting by Pablo Picasso, fragmented geometric shapes, abstract faces, multiple perspectives", desc: "Cubismo, geometría fragmentada.", s: [3, 1, 2, 2, 4, 4, 5, 5, 1, 1] },
+            { id: "monet", group: "G1", name: "Claude Monet", prompt: "Impressionist painting by Claude Monet, water lilies, dappled light, loose brushstrokes, pastel colors", desc: "Impresionismo, luz difusa.", s: [4, 4, 3, 4, 2, 3, 3, 5, 0, 0] },
+            { id: "klimt", group: "G1", name: "Gustav Klimt", prompt: "Art style of Gustav Klimt, gold leaf textures, mosaic patterns, erotic symbolism, rich ornamentation", desc: "Simbolismo, pan de oro, mosaicos.", s: [5, 3, 5, 4, 3, 4, 4, 4, 0, 0] },
+            { id: "hopper", group: "G1", name: "Edward Hopper", prompt: "Oil painting by Edward Hopper, american realism, solitude, cinematic lighting, urban isolation", desc: "Realismo americano, soledad, luz dura.", s: [2, 0, 4, 5, 4, 3, 3, 4, 0, 1] },
+            { id: "basquiat", group: "G1", name: "J.M. Basquiat", prompt: "Neo-expressionist by Basquiat, graffiti style, skulls, crowns, chaotic composition, scrawled text", desc: "Neo-expresionismo, caos urbano.", s: [4, 1, 5, 1, 4, 5, 5, 4, 0, 3] },
+            { id: "kahlo", group: "G1", name: "Frida Kahlo", prompt: "Style of Frida Kahlo, naive surrealism, vibrant mexican colors, foliage background, self-portrait style", desc: "Surrealismo naif, folclore mexicano.", s: [5, 2, 5, 3, 4, 5, 4, 4, 0, 1] },
+            { id: "hokusai", group: "G1", name: "Hokusai (Ukiyo-e)", prompt: "Ukiyo-e woodblock print, great wave style, flat colors, heavy outlines, mount fuji, japanese traditional", desc: "Grabado japonés, líneas marcadas.", s: [3, 2, 3, 5, 2, 3, 4, 5, 0, 0] },
+            { id: "magritte", group: "G1", name: "René Magritte", prompt: "Surrealist art by Magritte, man in bowler hat, floating objects, blue sky with clouds, conceptual", desc: "Surrealismo conceptual.", s: [2, 1, 1, 3, 4, 2, 4, 4, 2, 4] },
+            { id: "matisse", group: "G1", name: "Henri Matisse", prompt: "Matisse paper cutouts style, abstract collage, vibrant primary colors, simple organic shapes, dancing figures", desc: "Fauvismo, recortes de papel.", s: [5, 5, 2, 2, 1, 4, 4, 4, 0, 0] },
+            { id: "kandinsky", group: "G1", name: "Wassily Kandinsky", prompt: "Abstract art by Kandinsky, geometric composition, circles and lines, synesthesia, colorful musicality", desc: "Abstracción geométrica y lírica.", s: [5, 3, 4, 1, 3, 4, 3, 3, 0, 0] },
+            { id: "pollock", group: "G1", name: "Jackson Pollock", prompt: "Action painting by Jackson Pollock, drip painting, chaotic splatters, tangled lines, abstract expressionism", desc: "Action painting, caos abstracto.", s: [3, 1, 4, 1, 3, 5, 4, 4, 0, 0] },
+            { id: "turner", group: "G1", name: "J.M.W. Turner", prompt: "Oil painting by J.M.W. Turner, atmospheric storm, blurred landscape, light and mist, romanticism", desc: "Romanticismo, atmósferas difusas.", s: [4, 2, 5, 3, 4, 5, 3, 3, 0, 0] },
+            { id: "bosch", group: "G1", name: "El Bosco", prompt: "Hieronymus Bosch style, garden of earthly delights, detailed chaos, fantastic creatures, medieval surrealism", desc: "Surrealismo medieval, caos detallado.", s: [4, 1, 2, 2, 5, 3, 5, 3, 2, 2] },
+            { id: "elgreco", group: "G1", name: "El Greco", prompt: "El Greco painting style, elongated figures, dramatic expressionism, dark moody clouds, religious mysticism", desc: "Manierismo, figuras alargadas.", s: [2, 1, 4, 3, 4, 5, 3, 3, 0, 0] },
+            { id: "goya", group: "G1", name: "Francisco de Goya", prompt: "Black paintings by Goya, dark atmosphere, grotesque faces, haunting expressionism, loose brushwork", desc: "Pinturas negras, atmósfera oscura.", s: [1, 0, 5, 3, 5, 5, 4, 4, 1, 2] },
+            { id: "modigliani", group: "G1", name: "Amedeo Modigliani", prompt: "Portrait by Modigliani, elongated necks, blank eyes, warm tones, bohemian style, linear elegance", desc: "Figuras alargadas, ojos vacíos.", s: [3, 1, 3, 4, 2, 3, 3, 3, 0, 0] },
+            { id: "seurat", group: "G1", name: "Georges Seurat", prompt: "Pointillism painting by Seurat, composed of millions of tiny dots, optical color mixing, sunday afternoon park", desc: "Puntillismo, mezcla óptica.", s: [4, 3, 1, 3, 2, 2, 3, 4, 0, 0] },
 
-    // G2: CÓMIC
-    { id: "moebius", group: "G2", name: "Moebius", prompt: "Sci-fi illustration by Moebius, ligne claire, desert fantasy, pastel colors, intricate line work", desc: "Línea clara, sci-fi onírico.", s: [4,2,3,4,5,3,4,4,1,1] },
-    { id: "herge", group: "G2", name: "Hergé", prompt: "Ligne claire style of Hergé, flat colors, clean black outlines, minimal shadows, comic book art", desc: "Línea clara pura, muy legible.", s: [3,3,1,4,1,2,3,5,2,0] },
-    { id: "miller", group: "G2", name: "Frank Miller", prompt: "Sin City comic style, high contrast black and white, noir atmosphere, splashes of red, ink blotches", desc: "Alto contraste B/N, noir violento.", s: [0,0,4,2,3,5,5,4,1,3] },
-    { id: "lichtenstein", group: "G2", name: "Roy Lichtenstein", prompt: "Pop Art comic by Lichtenstein, ben-day dots, thick outlines, primary colors, speech bubbles", desc: "Pop Art, tramas de puntos.", s: [5,2,1,4,1,2,5,5,2,4] },
-    { id: "junjiito", group: "G2", name: "Junji Ito", prompt: "Horror manga style by Junji Ito, fine lines, spiral patterns, body horror, black and white ink", desc: "Manga de horror, espirales.", s: [0,0,5,1,4,5,4,3,0,1] },
-    { id: "mignola", group: "G2", name: "Mike Mignola", prompt: "Hellboy comic style by Mike Mignola, heavy angular shadows, solid blacks, muted colors, gothic", desc: "Sombras angulares, gótico.", s: [2,1,3,3,3,4,5,3,1,1] },
-    { id: "gorillaz", group: "G2", name: "Jamie Hewlett", prompt: "Gorillaz character style, vector art, gritty urban, mixed media, graffiti influence, expressive eyes", desc: "Urbano grunge, personajes icónicos.", s: [4,3,3,2,2,5,4,5,4,3] },
-    { id: "kirby", group: "G2", name: "Jack Kirby", prompt: "Jack Kirby comic style, kirby krackle energy, dynamic foreshortening, retro superhero, bold lines", desc: "Cómic clásico, energía, dinamismo.", s: [5,4,3,4,2,4,4,4,1,0] },
-    { id: "tezuka", group: "G2", name: "Osamu Tezuka", prompt: "Osamu Tezuka manga style, astro boy, large eyes, rounded features, black and white, disney influence", desc: "Dios del manga, ojos grandes.", s: [1,4,2,5,1,3,3,4,2,0] },
-    { id: "akira", group: "G2", name: "Katsuhiro Otomo", prompt: "Akira manga style, detailed cyberpunk city, destruction, intricate architectural lines, crosshatching", desc: "Cyberpunk detallado, destrucción.", s: [2,1,4,3,5,4,5,5,0,1] },
-    { id: "burns", group: "G2", name: "Charles Burns", prompt: "Charles Burns comic style, black hole, high contrast black and white, creepy smooth textures, teenage angst", desc: "B/N alto contraste, texturas suaves.", s: [0,0,4,2,4,4,4,2,1,3] },
-    { id: "ware", group: "G2", name: "Chris Ware", prompt: "Chris Ware graphic novel style, isometric diagrams, flat colors, clean geometric lines, melancholic, detailed layout", desc: "Diseño isométrico, diagramas.", s: [3,1,3,2,4,2,3,2,0,2] },
-    { id: "frazetta", group: "G2", name: "Frank Frazetta", prompt: "Fantasy oil painting by Frank Frazetta, conan style, muscular heroes, dynamic action, dark atmosphere", desc: "Fantasía épica, héroes musculados.", s: [3,2,4,3,3,4,4,3,0,0] },
-    { id: "mccloud", group: "G2", name: "Scott McCloud", prompt: "Minimalist comic style, thick outlines, simple avatar, explanatory diagram, clarity over detail", desc: "Minimalismo explicativo.", s: [2,2,1,1,1,2,2,2,1,1] },
-    { id: "crumb", group: "G2", name: "Robert Crumb", prompt: "R. Crumb underground comix style, crosshatching, grotesque exaggeration, vintage americana, satire", desc: "Underground, sombreado denso.", s: [2,1,3,4,3,4,3,3,4,4] },
-    { id: "tardi", group: "G2", name: "Jacques Tardi", prompt: "Jacques Tardi comic style, ww1 trenches, gritty atmosphere, loose ink lines, grey tones, historical", desc: "Histórico, sucio, atmósfera gris.", s: [1,0,4,3,4,3,3,2,0,1] },
-    { id: "eisner", group: "G2", name: "Will Eisner", prompt: "Will Eisner the spirit style, dramatic typography integrated with architecture, noir comic, cinematic splash page", desc: "Narrativa visual, arquitectura.", s: [2,1,3,4,3,4,4,3,1,1] },
-    { id: "breccia", group: "G2", name: "Alberto Breccia", prompt: "Alberto Breccia comic style, experimental collage, high contrast ink, expressionist horror, texture mix", desc: "Experimental, collage, terror.", s: [0,0,5,2,5,5,4,2,0,2] },
-    { id: "romita", group: "G2", name: "John Romita Sr", prompt: "Classic Spiderman comic style, romance comic influence, beautiful faces, silver age marvel, bold primary colors", desc: "Marvel clásico, rostros bellos.", s: [5,3,2,5,2,3,3,4,1,0] },
-    { id: "quino", group: "G2", name: "Quino", prompt: "Quino cartoon style, mafalda, simple ink lines, crosshatching backgrounds, social satire, cute but cynical", desc: "Humor gráfico, sátira social.", s: [1,3,2,4,2,3,2,5,5,5] },
+            // G2: CÓMIC
+            { id: "moebius", group: "G2", name: "Moebius", prompt: "Sci-fi illustration by Moebius, ligne claire, desert fantasy, pastel colors, intricate line work", desc: "Línea clara, sci-fi onírico.", s: [4, 2, 3, 4, 5, 3, 4, 4, 1, 1] },
+            { id: "herge", group: "G2", name: "Hergé", prompt: "Ligne claire style of Hergé, flat colors, clean black outlines, minimal shadows, comic book art", desc: "Línea clara pura, muy legible.", s: [3, 3, 1, 4, 1, 2, 3, 5, 2, 0] },
+            { id: "miller", group: "G2", name: "Frank Miller", prompt: "Sin City comic style, high contrast black and white, noir atmosphere, splashes of red, ink blotches", desc: "Alto contraste B/N, noir violento.", s: [0, 0, 4, 2, 3, 5, 5, 4, 1, 3] },
+            { id: "lichtenstein", group: "G2", name: "Roy Lichtenstein", prompt: "Pop Art comic by Lichtenstein, ben-day dots, thick outlines, primary colors, speech bubbles", desc: "Pop Art, tramas de puntos.", s: [5, 2, 1, 4, 1, 2, 5, 5, 2, 4] },
+            { id: "junjiito", group: "G2", name: "Junji Ito", prompt: "Horror manga style by Junji Ito, fine lines, spiral patterns, body horror, black and white ink", desc: "Manga de horror, espirales.", s: [0, 0, 5, 1, 4, 5, 4, 3, 0, 1] },
+            { id: "mignola", group: "G2", name: "Mike Mignola", prompt: "Hellboy comic style by Mike Mignola, heavy angular shadows, solid blacks, muted colors, gothic", desc: "Sombras angulares, gótico.", s: [2, 1, 3, 3, 3, 4, 5, 3, 1, 1] },
+            { id: "gorillaz", group: "G2", name: "Jamie Hewlett", prompt: "Gorillaz character style, vector art, gritty urban, mixed media, graffiti influence, expressive eyes", desc: "Urbano grunge, personajes icónicos.", s: [4, 3, 3, 2, 2, 5, 4, 5, 4, 3] },
+            { id: "kirby", group: "G2", name: "Jack Kirby", prompt: "Jack Kirby comic style, kirby krackle energy, dynamic foreshortening, retro superhero, bold lines", desc: "Cómic clásico, energía, dinamismo.", s: [5, 4, 3, 4, 2, 4, 4, 4, 1, 0] },
+            { id: "tezuka", group: "G2", name: "Osamu Tezuka", prompt: "Osamu Tezuka manga style, astro boy, large eyes, rounded features, black and white, disney influence", desc: "Dios del manga, ojos grandes.", s: [1, 4, 2, 5, 1, 3, 3, 4, 2, 0] },
+            { id: "akira", group: "G2", name: "Katsuhiro Otomo", prompt: "Akira manga style, detailed cyberpunk city, destruction, intricate architectural lines, crosshatching", desc: "Cyberpunk detallado, destrucción.", s: [2, 1, 4, 3, 5, 4, 5, 5, 0, 1] },
+            { id: "burns", group: "G2", name: "Charles Burns", prompt: "Charles Burns comic style, black hole, high contrast black and white, creepy smooth textures, teenage angst", desc: "B/N alto contraste, texturas suaves.", s: [0, 0, 4, 2, 4, 4, 4, 2, 1, 3] },
+            { id: "ware", group: "G2", name: "Chris Ware", prompt: "Chris Ware graphic novel style, isometric diagrams, flat colors, clean geometric lines, melancholic, detailed layout", desc: "Diseño isométrico, diagramas.", s: [3, 1, 3, 2, 4, 2, 3, 2, 0, 2] },
+            { id: "frazetta", group: "G2", name: "Frank Frazetta", prompt: "Fantasy oil painting by Frank Frazetta, conan style, muscular heroes, dynamic action, dark atmosphere", desc: "Fantasía épica, héroes musculados.", s: [3, 2, 4, 3, 3, 4, 4, 3, 0, 0] },
+            { id: "mccloud", group: "G2", name: "Scott McCloud", prompt: "Minimalist comic style, thick outlines, simple avatar, explanatory diagram, clarity over detail", desc: "Minimalismo explicativo.", s: [2, 2, 1, 1, 1, 2, 2, 2, 1, 1] },
+            { id: "crumb", group: "G2", name: "Robert Crumb", prompt: "R. Crumb underground comix style, crosshatching, grotesque exaggeration, vintage americana, satire", desc: "Underground, sombreado denso.", s: [2, 1, 3, 4, 3, 4, 3, 3, 4, 4] },
+            { id: "tardi", group: "G2", name: "Jacques Tardi", prompt: "Jacques Tardi comic style, ww1 trenches, gritty atmosphere, loose ink lines, grey tones, historical", desc: "Histórico, sucio, atmósfera gris.", s: [1, 0, 4, 3, 4, 3, 3, 2, 0, 1] },
+            { id: "eisner", group: "G2", name: "Will Eisner", prompt: "Will Eisner the spirit style, dramatic typography integrated with architecture, noir comic, cinematic splash page", desc: "Narrativa visual, arquitectura.", s: [2, 1, 3, 4, 3, 4, 4, 3, 1, 1] },
+            { id: "breccia", group: "G2", name: "Alberto Breccia", prompt: "Alberto Breccia comic style, experimental collage, high contrast ink, expressionist horror, texture mix", desc: "Experimental, collage, terror.", s: [0, 0, 5, 2, 5, 5, 4, 2, 0, 2] },
+            { id: "romita", group: "G2", name: "John Romita Sr", prompt: "Classic Spiderman comic style, romance comic influence, beautiful faces, silver age marvel, bold primary colors", desc: "Marvel clásico, rostros bellos.", s: [5, 3, 2, 5, 2, 3, 3, 4, 1, 0] },
+            { id: "quino", group: "G2", name: "Quino", prompt: "Quino cartoon style, mafalda, simple ink lines, crosshatching backgrounds, social satire, cute but cynical", desc: "Humor gráfico, sátira social.", s: [1, 3, 2, 4, 2, 3, 2, 5, 5, 5] },
 
-    // G3: DISEÑO
-    { id: "bauhaus", group: "G3", name: "Bauhaus", prompt: "Bauhaus design poster, geometric shapes, function over form, primary colors, diagonal typography, minimalist", desc: "Funcionalismo, geometría.", s: [3,1,1,3,2,1,4,4,0,0] },
-    { id: "mucha", group: "G3", name: "Alphonse Mucha", prompt: "Art Nouveau poster by Alphonse Mucha, floral patterns, flowing hair, pastel colors, elegant lines", desc: "Art Nouveau, elegancia floral.", s: [4,3,2,5,1,3,3,4,0,0] },
-    { id: "memphis", group: "G3", name: "Memphis Group", prompt: "Memphis design pattern, 80s style, squiggles and triangles, pastel and neon clash, chaotic geometry", desc: "Estilo 80s, geometría caótica.", s: [5,4,1,4,1,3,4,3,3,2] },
-    { id: "toulouse", group: "G3", name: "Toulouse-Lautrec", prompt: "Toulouse-Lautrec moulin rouge poster, lithograph style, loose sketch lines, flat colors, bohemian nightlife", desc: "Cartelismo bohemio, litografía.", s: [3,2,3,4,2,4,3,3,1,1] },
-    { id: "bass", group: "G3", name: "Saul Bass", prompt: "Saul Bass movie poster, jagged paper cutout look, minimal colors, silhouette, hitchcock vertigo style", desc: "Recortes irregulares, siluetas.", s: [2,1,4,3,3,3,5,4,0,1] },
-    { id: "rand", group: "G3", name: "Paul Rand", prompt: "Paul Rand graphic design, corporate modernism, playful shapes, bold typography, simple collage", desc: "Modernismo corporativo.", s: [3,3,1,2,1,2,4,3,1,0] },
-    { id: "glaser", group: "G3", name: "Milton Glaser", prompt: "Milton Glaser psychedelic style, bob dylan poster hair, contour lines, vibrant colors, 70s design", desc: "Psicodelia 70s, contornos.", s: [5,3,2,4,2,3,4,4,0,0] },
-    { id: "constructivism", group: "G3", name: "Constructivismo", prompt: "Russian constructivist poster, geometric abstraction, red black and white, bold cyrillic typography, industrial", desc: "Geometría industrial, propaganda.", s: [2,1,3,2,2,2,5,2,0,1] },
-    { id: "swiss", group: "G3", name: "Estilo Suizo", prompt: "Swiss international typographic style, grid system, helvetica font, asymmetrical layout, negative space, clean", desc: "Grilla, limpieza, Helvetica.", s: [1,0,0,1,1,0,3,4,0,0] },
-    { id: "vaporwave", group: "G3", name: "Vaporwave", prompt: "Vaporwave aesthetic, greek statues, glitch art, neon pink and purple, tropical sunset, nostalgic 90s computer", desc: "Nostalgia digital, neón.", s: [5,2,2,5,2,2,4,4,1,4] },
-    { id: "artdeco", group: "G3", name: "Art Decó", prompt: "A.M. Cassandre poster style, art deco, airbrush gradients, geometric monumentalism, luxury travel", desc: "Lujo geométrico, monumental.", s: [3,2,2,5,3,2,4,3,0,0] },
-    { id: "psychedelic", group: "G3", name: "Psicodelia 60s", prompt: "1960s psychedelic rock poster, liquid lettering, warping perception, vibrant neon clash, kaleidoscope", desc: "Letras líquidas, lisérgico.", s: [5,4,3,4,3,3,5,3,1,0] },
-    { id: "propaganda_us", group: "G3", name: "Propaganda WWII", prompt: "WWII propaganda poster, Rosie the Riveter style, bold illustration, patriotic colors, motivational text", desc: "Ilustración patriótica, motivacional.", s: [4,2,3,4,2,3,4,3,0,1] },
-    { id: "neon", group: "G3", name: "Letrero de Neón", prompt: "Neon sign typography, glowing tubes, dark brick background, cyber aesthetic, vibrant blue and pink", desc: "Tubos brillantes, nocturno.", s: [5,2,2,3,2,2,5,5,0,0] },
-    { id: "blueprint", group: "G3", name: "Blueprint", prompt: "Technical blueprint drawing, white lines on blue background, schematic measurements, engineering diagram", desc: "Plano técnico, ingeniería.", s: [1,0,0,1,3,0,2,2,0,0] },
-    { id: "risograph", group: "G3", name: "Risografía", prompt: "Risograph print effect, grainy texture, misaligned layers, fluorescent pink and blue ink, zine aesthetic", desc: "Textura granulada, capas desalineadas.", s: [4,3,1,3,1,2,3,2,1,1] },
-    { id: "collage_dada", group: "G3", name: "Collage Dadaísta", prompt: "Dadaist collage art, mixed media, newspaper clippings, absurd combination, vintage texture, torn paper", desc: "Recortes absurdos, caos.", s: [2,1,2,3,3,4,3,1,4,5] },
-    { id: "pixelart", group: "G3", name: "Pixel Art", prompt: "16-bit pixel art, SNES video game style, dithering, limited color palette, nostalgic game sprite", desc: "Retro gaming, sprites.", s: [4,4,2,5,1,2,3,5,3,1] },
-    { id: "lowpoly", group: "G3", name: "Low Poly", prompt: "Low poly 3D render, geometric facets, minimalist landscape, flat lighting, pastel colors, sharp edges", desc: "3D poligonal, minimalismo.", s: [3,2,1,1,2,1,3,3,0,0] },
-    { id: "flatdesign", group: "G3", name: "Flat Design", prompt: "Corporate flat design illustration, vector art, faceless characters, solid colors, clean minimalism, tech startup", desc: "Vectorial corporativo, simple.", s: [3,2,0,0,0,1,2,5,0,0] },
+            // G3: DISEÑO
+            { id: "bauhaus", group: "G3", name: "Bauhaus", prompt: "Bauhaus design poster, geometric shapes, function over form, primary colors, diagonal typography, minimalist", desc: "Funcionalismo, geometría.", s: [3, 1, 1, 3, 2, 1, 4, 4, 0, 0] },
+            { id: "mucha", group: "G3", name: "Alphonse Mucha", prompt: "Art Nouveau poster by Alphonse Mucha, floral patterns, flowing hair, pastel colors, elegant lines", desc: "Art Nouveau, elegancia floral.", s: [4, 3, 2, 5, 1, 3, 3, 4, 0, 0] },
+            { id: "memphis", group: "G3", name: "Memphis Group", prompt: "Memphis design pattern, 80s style, squiggles and triangles, pastel and neon clash, chaotic geometry", desc: "Estilo 80s, geometría caótica.", s: [5, 4, 1, 4, 1, 3, 4, 3, 3, 2] },
+            { id: "toulouse", group: "G3", name: "Toulouse-Lautrec", prompt: "Toulouse-Lautrec moulin rouge poster, lithograph style, loose sketch lines, flat colors, bohemian nightlife", desc: "Cartelismo bohemio, litografía.", s: [3, 2, 3, 4, 2, 4, 3, 3, 1, 1] },
+            { id: "bass", group: "G3", name: "Saul Bass", prompt: "Saul Bass movie poster, jagged paper cutout look, minimal colors, silhouette, hitchcock vertigo style", desc: "Recortes irregulares, siluetas.", s: [2, 1, 4, 3, 3, 3, 5, 4, 0, 1] },
+            { id: "rand", group: "G3", name: "Paul Rand", prompt: "Paul Rand graphic design, corporate modernism, playful shapes, bold typography, simple collage", desc: "Modernismo corporativo.", s: [3, 3, 1, 2, 1, 2, 4, 3, 1, 0] },
+            { id: "glaser", group: "G3", name: "Milton Glaser", prompt: "Milton Glaser psychedelic style, bob dylan poster hair, contour lines, vibrant colors, 70s design", desc: "Psicodelia 70s, contornos.", s: [5, 3, 2, 4, 2, 3, 4, 4, 0, 0] },
+            { id: "constructivism", group: "G3", name: "Constructivismo", prompt: "Russian constructivist poster, geometric abstraction, red black and white, bold cyrillic typography, industrial", desc: "Geometría industrial, propaganda.", s: [2, 1, 3, 2, 2, 2, 5, 2, 0, 1] },
+            { id: "swiss", group: "G3", name: "Estilo Suizo", prompt: "Swiss international typographic style, grid system, helvetica font, asymmetrical layout, negative space, clean", desc: "Grilla, limpieza, Helvetica.", s: [1, 0, 0, 1, 1, 0, 3, 4, 0, 0] },
+            { id: "vaporwave", group: "G3", name: "Vaporwave", prompt: "Vaporwave aesthetic, greek statues, glitch art, neon pink and purple, tropical sunset, nostalgic 90s computer", desc: "Nostalgia digital, neón.", s: [5, 2, 2, 5, 2, 2, 4, 4, 1, 4] },
+            { id: "artdeco", group: "G3", name: "Art Decó", prompt: "A.M. Cassandre poster style, art deco, airbrush gradients, geometric monumentalism, luxury travel", desc: "Lujo geométrico, monumental.", s: [3, 2, 2, 5, 3, 2, 4, 3, 0, 0] },
+            { id: "psychedelic", group: "G3", name: "Psicodelia 60s", prompt: "1960s psychedelic rock poster, liquid lettering, warping perception, vibrant neon clash, kaleidoscope", desc: "Letras líquidas, lisérgico.", s: [5, 4, 3, 4, 3, 3, 5, 3, 1, 0] },
+            { id: "propaganda_us", group: "G3", name: "Propaganda WWII", prompt: "WWII propaganda poster, Rosie the Riveter style, bold illustration, patriotic colors, motivational text", desc: "Ilustración patriótica, motivacional.", s: [4, 2, 3, 4, 2, 3, 4, 3, 0, 1] },
+            { id: "neon", group: "G3", name: "Letrero de Neón", prompt: "Neon sign typography, glowing tubes, dark brick background, cyber aesthetic, vibrant blue and pink", desc: "Tubos brillantes, nocturno.", s: [5, 2, 2, 3, 2, 2, 5, 5, 0, 0] },
+            { id: "blueprint", group: "G3", name: "Blueprint", prompt: "Technical blueprint drawing, white lines on blue background, schematic measurements, engineering diagram", desc: "Plano técnico, ingeniería.", s: [1, 0, 0, 1, 3, 0, 2, 2, 0, 0] },
+            { id: "risograph", group: "G3", name: "Risografía", prompt: "Risograph print effect, grainy texture, misaligned layers, fluorescent pink and blue ink, zine aesthetic", desc: "Textura granulada, capas desalineadas.", s: [4, 3, 1, 3, 1, 2, 3, 2, 1, 1] },
+            { id: "collage_dada", group: "G3", name: "Collage Dadaísta", prompt: "Dadaist collage art, mixed media, newspaper clippings, absurd combination, vintage texture, torn paper", desc: "Recortes absurdos, caos.", s: [2, 1, 2, 3, 3, 4, 3, 1, 4, 5] },
+            { id: "pixelart", group: "G3", name: "Pixel Art", prompt: "16-bit pixel art, SNES video game style, dithering, limited color palette, nostalgic game sprite", desc: "Retro gaming, sprites.", s: [4, 4, 2, 5, 1, 2, 3, 5, 3, 1] },
+            { id: "lowpoly", group: "G3", name: "Low Poly", prompt: "Low poly 3D render, geometric facets, minimalist landscape, flat lighting, pastel colors, sharp edges", desc: "3D poligonal, minimalismo.", s: [3, 2, 1, 1, 2, 1, 3, 3, 0, 0] },
+            { id: "flatdesign", group: "G3", name: "Flat Design", prompt: "Corporate flat design illustration, vector art, faceless characters, solid colors, clean minimalism, tech startup", desc: "Vectorial corporativo, simple.", s: [3, 2, 0, 0, 0, 1, 2, 5, 0, 0] },
 
-    // G4: ARTE MENSAJE
-    { id: "banksy", group: "G4", name: "Banksy", prompt: "Banksy stencil art on brick wall, black spray paint, red accent, political satire, street art graffiti", desc: "Stencil callejero, sátira.", s: [1,0,4,1,3,4,5,5,2,5] },
-    { id: "fairey", group: "G4", name: "Shepard Fairey", prompt: "Shepard Fairey propaganda poster style, vector portrait, red beige and blue palette, bold typography, hope poster", desc: "Estilo 'Hope', vectorizado.", s: [3,1,3,3,2,3,5,4,0,2] },
-    { id: "kruger", group: "G4", name: "Barbara Kruger", prompt: "Barbara Kruger art style, black and white photography, red text box with white futura bold font, consumerism critique", desc: "Foto B/N, cajas rojas texto.", s: [2,0,3,1,3,2,5,3,0,5] },
-    { id: "haring", group: "G4", name: "Keith Haring", prompt: "Keith Haring graffiti style, thick black outlines, dancing figures, radiant babies, primary colors, kinetic lines", desc: "Figuras bailando, pop.", s: [5,4,2,3,1,3,4,5,1,1] },
-    { id: "warhol", group: "G4", name: "Andy Warhol", prompt: "Andy Warhol silkscreen print, repeated marilyn monroe, high contrast neon colors, misaligned registration", desc: "Serigrafía repetitiva, neón.", s: [5,1,0,3,1,1,5,5,0,3] },
-    { id: "rockwell", group: "G4", name: "Norman Rockwell", prompt: "Norman Rockwell illustration, ideal american family, hyperrealistic storytelling, warm lighting, expressive faces", desc: "Costumbrismo idealizado.", s: [4,3,4,5,3,5,3,5,2,1] },
-    { id: "rivera", group: "G4", name: "Diego Rivera", prompt: "Diego Rivera mural style, social realism, large crowds, industrial workers, rounded forms, earth tones", desc: "Muralismo social.", s: [3,1,4,3,4,3,4,3,0,1] },
-    { id: "botero", group: "G4", name: "Fernando Botero", prompt: "Fernando Botero style painting, volumetry, exaggerated fat figures, satire, smooth texture, still life", desc: "Volumen exagerado, sátira.", s: [3,2,1,2,2,3,4,4,3,2] },
-    { id: "wildstyle", group: "G4", name: "Graffiti Wildstyle", prompt: "Wildstyle graffiti lettering, interlocking letters, arrows, vibrant colors, spray paint texture, urban wall", desc: "Graffiti complejo, letras.", s: [5,2,3,1,2,4,4,3,0,1] },
-    { id: "stickerbomb", group: "G4", name: "Sticker Bomb", prompt: "Sticker bombing texture, overlapping street stickers, pop culture logos, chaotic, grunge aesthetic", desc: "Pegatinas superpuestas, caos.", s: [5,3,1,2,1,2,3,2,2,2] },
+            // G4: ARTE MENSAJE
+            { id: "banksy", group: "G4", name: "Banksy", prompt: "Banksy stencil art on brick wall, black spray paint, red accent, political satire, street art graffiti", desc: "Stencil callejero, sátira.", s: [1, 0, 4, 1, 3, 4, 5, 5, 2, 5] },
+            { id: "fairey", group: "G4", name: "Shepard Fairey", prompt: "Shepard Fairey propaganda poster style, vector portrait, red beige and blue palette, bold typography, hope poster", desc: "Estilo 'Hope', vectorizado.", s: [3, 1, 3, 3, 2, 3, 5, 4, 0, 2] },
+            { id: "kruger", group: "G4", name: "Barbara Kruger", prompt: "Barbara Kruger art style, black and white photography, red text box with white futura bold font, consumerism critique", desc: "Foto B/N, cajas rojas texto.", s: [2, 0, 3, 1, 3, 2, 5, 3, 0, 5] },
+            { id: "haring", group: "G4", name: "Keith Haring", prompt: "Keith Haring graffiti style, thick black outlines, dancing figures, radiant babies, primary colors, kinetic lines", desc: "Figuras bailando, pop.", s: [5, 4, 2, 3, 1, 3, 4, 5, 1, 1] },
+            { id: "warhol", group: "G4", name: "Andy Warhol", prompt: "Andy Warhol silkscreen print, repeated marilyn monroe, high contrast neon colors, misaligned registration", desc: "Serigrafía repetitiva, neón.", s: [5, 1, 0, 3, 1, 1, 5, 5, 0, 3] },
+            { id: "rockwell", group: "G4", name: "Norman Rockwell", prompt: "Norman Rockwell illustration, ideal american family, hyperrealistic storytelling, warm lighting, expressive faces", desc: "Costumbrismo idealizado.", s: [4, 3, 4, 5, 3, 5, 3, 5, 2, 1] },
+            { id: "rivera", group: "G4", name: "Diego Rivera", prompt: "Diego Rivera mural style, social realism, large crowds, industrial workers, rounded forms, earth tones", desc: "Muralismo social.", s: [3, 1, 4, 3, 4, 3, 4, 3, 0, 1] },
+            { id: "botero", group: "G4", name: "Fernando Botero", prompt: "Fernando Botero style painting, volumetry, exaggerated fat figures, satire, smooth texture, still life", desc: "Volumen exagerado, sátira.", s: [3, 2, 1, 2, 2, 3, 4, 4, 3, 2] },
+            { id: "wildstyle", group: "G4", name: "Graffiti Wildstyle", prompt: "Wildstyle graffiti lettering, interlocking letters, arrows, vibrant colors, spray paint texture, urban wall", desc: "Graffiti complejo, letras.", s: [5, 2, 3, 1, 2, 4, 4, 3, 0, 1] },
+            { id: "stickerbomb", group: "G4", name: "Sticker Bomb", prompt: "Sticker bombing texture, overlapping street stickers, pop culture logos, chaotic, grunge aesthetic", desc: "Pegatinas superpuestas, caos.", s: [5, 3, 1, 2, 1, 2, 3, 2, 2, 2] },
 
-    // G5: CINE Y ANIMACIÓN
-    { id: "ghibli", group: "G5", name: "Studio Ghibli", prompt: "Studio Ghibli anime style, lush painted background, food illustration, detailed clouds, peaceful atmosphere", desc: "Fondos detallados, paz.", s: [4,4,5,4,3,4,3,5,1,0] },
-    { id: "pixar", group: "G5", name: "Pixar 3D", prompt: "Pixar 3D animation style, soft lighting, subsurface scattering, expressive characters, clean render, vibrant", desc: "CGI alta calidad, suave.", s: [5,5,4,2,3,5,4,5,4,0] },
-    { id: "wes", group: "G5", name: "Wes Anderson", prompt: "Wes Anderson film shot, symmetrical composition, pastel color palette, flat lay, quirky objects", desc: "Simetría obsesiva, pasteles.", s: [4,3,2,5,2,1,4,4,3,4] },
-    { id: "burton", group: "G5", name: "Tim Burton", prompt: "Tim Burton animation style, gothic fantasy, spindly limbs, dark circles under eyes, spiral hills, dark humor", desc: "Gótico, personajes delgados.", s: [1,1,4,3,3,4,4,5,3,2] },
-    { id: "spiderverse", group: "G5", name: "Spider-Verse", prompt: "Into the Spider-Verse art style, halftone dots, chromatic aberration, comic book effects in 3D, graffiti textures", desc: "Estilo cómic 3D, aberración.", s: [5,4,4,2,3,5,5,5,2,1] },
-    { id: "rubberhose", group: "G5", name: "Rubber Hose", prompt: "1930s rubber hose animation style, black and white, pie eyes, noodle limbs, grainy film grain, cuphead style", desc: "Animación retro 30s.", s: [1,4,1,5,1,5,3,4,5,1] },
-    { id: "aardman", group: "G5", name: "Aardman", prompt: "Aardman claymation style, plasticine texture, thumbprints visible, wide toothy grin, stop motion look", desc: "Plastilina, huellas dactilares.", s: [4,5,2,3,2,5,3,4,5,1] },
-    { id: "southpark", group: "G5", name: "Paper Cutout", prompt: "Construction paper cutout style, crude shapes, flat texture, simple shadows, South Park aesthetic", desc: "Recortes cartulina crudos.", s: [4,2,0,2,0,1,2,5,5,5] },
-    { id: "disney50s", group: "G5", name: "Disney 50s", prompt: "Mary Blair concept art style, modernist disney, bold color blocking, whimsical shapes, it's a small world style", desc: "Concept art modernista.", s: [5,4,3,5,2,3,4,3,2,0] },
-    { id: "noir", group: "G5", name: "Film Noir", prompt: "Film Noir cinematography, black and white, high contrast, venetian blind shadows, silhouette, smoking detective", desc: "Cine negro, sombras, misterio.", s: [0,0,5,5,4,3,4,4,0,1] },
-    { id: "cyberpunk", group: "G5", name: "Cyberpunk", prompt: "Cyberpunk city, neon lights, rain, high tech low life, futuristic holographic ads, blue and pink palette", desc: "Lluvia, neón, futurismo sucio.", s: [5,1,4,2,4,3,5,5,0,1] },
-    { id: "steampunk", group: "G5", name: "Steampunk", prompt: "Steampunk style, brass and copper gears, victorian clothing, steam powered machinery, sepia tones", desc: "Latón, engranajes, victoriano.", s: [2,2,2,4,3,2,4,4,1,0] },
-    { id: "matrix", group: "G5", name: "Matrix", prompt: "Matrix digital rain style, glowing green code cascading, black background, cyber aesthetic, hacker", desc: "Lluvia digital verde.", s: [2,0,1,3,1,0,3,5,0,0] },
-    { id: "gta", group: "G5", name: "GTA Cover", prompt: "Grand Theft Auto loading screen art, cel shaded vector realism, bold black outlines, scenic backdrop, confident character", desc: "Portada GTA, vectorizado.", s: [4,2,3,2,2,3,4,5,1,1] },
-    { id: "storyboard_pencil", group: "G5", name: "Storyboard (Lápiz)", prompt: "Rough pencil storyboard sketch, dynamic action lines, arrows for movement, monochromatic graphite, quick drawing", desc: "Boceto rápido, flechas.", s: [0,0,1,1,2,4,1,1,0,0] },
-    { id: "storyboard_marker", group: "G5", name: "Storyboard (Color)", prompt: "Architectural marker rendering, copic markers, alcohol ink, shading, concept sketch, loose strokes", desc: "Rotuladores Copic, boceto.", s: [3,1,1,2,2,3,2,2,0,0] },
-    { id: "concept_futurist", group: "G5", name: "Syd Mead", prompt: "Syd Mead concept art, futuristic vehicles, sleek surfaces, optimistic sci-fi, gouache rendering style", desc: "Futurismo elegante.", s: [4,2,2,4,3,2,4,3,0,0] },
-    { id: "giger", group: "G5", name: "H.R. Giger", prompt: "Biomechanical art by H.R. Giger, alien structures, monochrome, airbrush texture, metallic and organic mix", desc: "Biomecánico, alienígena.", s: [0,0,5,1,5,3,5,4,0,0] },
-    { id: "lego", group: "G5", name: "Lego / Voxel", prompt: "Lego brick construction, voxel art style, plastic glossy texture, toy photography, depth of field", desc: "Bloques tipo Lego.", s: [5,5,1,3,1,2,3,5,2,1] },
-    { id: "muppets", group: "G5", name: "Muppets", prompt: "Jim Henson muppet style, felt texture, fur, goofy eyes, puppet photography, studio lighting", desc: "Marionetas, textura fieltro.", s: [4,5,3,4,1,5,3,4,5,2] },
+            // G5: CINE Y ANIMACIÓN
+            { id: "ghibli", group: "G5", name: "Studio Ghibli", prompt: "Studio Ghibli anime style, lush painted background, food illustration, detailed clouds, peaceful atmosphere", desc: "Fondos detallados, paz.", s: [4, 4, 5, 4, 3, 4, 3, 5, 1, 0] },
+            { id: "pixar", group: "G5", name: "Pixar 3D", prompt: "Pixar 3D animation style, soft lighting, subsurface scattering, expressive characters, clean render, vibrant", desc: "CGI alta calidad, suave.", s: [5, 5, 4, 2, 3, 5, 4, 5, 4, 0] },
+            { id: "wes", group: "G5", name: "Wes Anderson", prompt: "Wes Anderson film shot, symmetrical composition, pastel color palette, flat lay, quirky objects", desc: "Simetría obsesiva, pasteles.", s: [4, 3, 2, 5, 2, 1, 4, 4, 3, 4] },
+            { id: "burton", group: "G5", name: "Tim Burton", prompt: "Tim Burton animation style, gothic fantasy, spindly limbs, dark circles under eyes, spiral hills, dark humor", desc: "Gótico, personajes delgados.", s: [1, 1, 4, 3, 3, 4, 4, 5, 3, 2] },
+            { id: "spiderverse", group: "G5", name: "Spider-Verse", prompt: "Into the Spider-Verse art style, halftone dots, chromatic aberration, comic book effects in 3D, graffiti textures", desc: "Estilo cómic 3D, aberración.", s: [5, 4, 4, 2, 3, 5, 5, 5, 2, 1] },
+            { id: "rubberhose", group: "G5", name: "Rubber Hose", prompt: "1930s rubber hose animation style, black and white, pie eyes, noodle limbs, grainy film grain, cuphead style", desc: "Animación retro 30s.", s: [1, 4, 1, 5, 1, 5, 3, 4, 5, 1] },
+            { id: "aardman", group: "G5", name: "Aardman", prompt: "Aardman claymation style, plasticine texture, thumbprints visible, wide toothy grin, stop motion look", desc: "Plastilina, huellas dactilares.", s: [4, 5, 2, 3, 2, 5, 3, 4, 5, 1] },
+            { id: "southpark", group: "G5", name: "Paper Cutout", prompt: "Construction paper cutout style, crude shapes, flat texture, simple shadows, South Park aesthetic", desc: "Recortes cartulina crudos.", s: [4, 2, 0, 2, 0, 1, 2, 5, 5, 5] },
+            { id: "disney50s", group: "G5", name: "Disney 50s", prompt: "Mary Blair concept art style, modernist disney, bold color blocking, whimsical shapes, it's a small world style", desc: "Concept art modernista.", s: [5, 4, 3, 5, 2, 3, 4, 3, 2, 0] },
+            { id: "noir", group: "G5", name: "Film Noir", prompt: "Film Noir cinematography, black and white, high contrast, venetian blind shadows, silhouette, smoking detective", desc: "Cine negro, sombras, misterio.", s: [0, 0, 5, 5, 4, 3, 4, 4, 0, 1] },
+            { id: "cyberpunk", group: "G5", name: "Cyberpunk", prompt: "Cyberpunk city, neon lights, rain, high tech low life, futuristic holographic ads, blue and pink palette", desc: "Lluvia, neón, futurismo sucio.", s: [5, 1, 4, 2, 4, 3, 5, 5, 0, 1] },
+            { id: "steampunk", group: "G5", name: "Steampunk", prompt: "Steampunk style, brass and copper gears, victorian clothing, steam powered machinery, sepia tones", desc: "Latón, engranajes, victoriano.", s: [2, 2, 2, 4, 3, 2, 4, 4, 1, 0] },
+            { id: "matrix", group: "G5", name: "Matrix", prompt: "Matrix digital rain style, glowing green code cascading, black background, cyber aesthetic, hacker", desc: "Lluvia digital verde.", s: [2, 0, 1, 3, 1, 0, 3, 5, 0, 0] },
+            { id: "gta", group: "G5", name: "GTA Cover", prompt: "Grand Theft Auto loading screen art, cel shaded vector realism, bold black outlines, scenic backdrop, confident character", desc: "Portada GTA, vectorizado.", s: [4, 2, 3, 2, 2, 3, 4, 5, 1, 1] },
+            { id: "storyboard_pencil", group: "G5", name: "Storyboard (Lápiz)", prompt: "Rough pencil storyboard sketch, dynamic action lines, arrows for movement, monochromatic graphite, quick drawing", desc: "Boceto rápido, flechas.", s: [0, 0, 1, 1, 2, 4, 1, 1, 0, 0] },
+            { id: "storyboard_marker", group: "G5", name: "Storyboard (Color)", prompt: "Architectural marker rendering, copic markers, alcohol ink, shading, concept sketch, loose strokes", desc: "Rotuladores Copic, boceto.", s: [3, 1, 1, 2, 2, 3, 2, 2, 0, 0] },
+            { id: "concept_futurist", group: "G5", name: "Syd Mead", prompt: "Syd Mead concept art, futuristic vehicles, sleek surfaces, optimistic sci-fi, gouache rendering style", desc: "Futurismo elegante.", s: [4, 2, 2, 4, 3, 2, 4, 3, 0, 0] },
+            { id: "giger", group: "G5", name: "H.R. Giger", prompt: "Biomechanical art by H.R. Giger, alien structures, monochrome, airbrush texture, metallic and organic mix", desc: "Biomecánico, alienígena.", s: [0, 0, 5, 1, 5, 3, 5, 4, 0, 0] },
+            { id: "lego", group: "G5", name: "Lego / Voxel", prompt: "Lego brick construction, voxel art style, plastic glossy texture, toy photography, depth of field", desc: "Bloques tipo Lego.", s: [5, 5, 1, 3, 1, 2, 3, 5, 2, 1] },
+            { id: "muppets", group: "G5", name: "Muppets", prompt: "Jim Henson muppet style, felt texture, fur, goofy eyes, puppet photography, studio lighting", desc: "Marionetas, textura fieltro.", s: [4, 5, 3, 4, 1, 5, 3, 4, 5, 2] },
 
-    // G6: MATERIALES Y FOTO 3D
-    { id: "origami", group: "G6", name: "Origami", prompt: "Origami paper art, folded paper animals, sharp creases, geometric papercraft, soft studio lighting", desc: "Papel plegado, pliegues nítidos.", s: [3,1,1,2,2,1,2,3,0,0] },
-    { id: "papercut", group: "G6", name: "Paper Cutout", prompt: "Layered paper cutout art, shadow box effect, depth layers, silhouette landscape, paper texture", desc: "Capas de papel, efecto caja.", s: [4,2,2,3,4,2,3,3,0,0] },
-    { id: "clay", group: "G6", name: "Plastilina (Clay)", prompt: "Plasticine clay model, fingerprint textures, imperfect shapes, soft lighting, handmade aesthetic", desc: "Modelado a mano.", s: [4,4,2,3,2,3,3,3,2,0] },
-    { id: "embroidery", group: "G6", name: "Bordado", prompt: "Embroidery art, stitched thread texture on fabric, patches, woven patterns, tactile feel", desc: "Hilo sobre tela, táctil.", s: [4,2,3,4,1,2,2,2,0,0] },
-    { id: "stainedglass", group: "G6", name: "Vidriera Gótica", prompt: "Stained glass window, lead lines, glowing colored glass, religious or fantasy scene, light passing through", desc: "Cristalera, luz.", s: [5,1,4,4,3,2,4,2,0,0] },
-    { id: "chalk", group: "G6", name: "Tiza en Pizarra", prompt: "Chalk drawing on blackboard, dusty texture, smudges, white and pastel chalk lines, cafe menu style", desc: "Dibujo en pizarra, polvo.", s: [2,1,2,4,1,2,2,3,0,0] },
-    { id: "knolling", group: "G6", name: "Knolling", prompt: "Knolling photography, objects arranged at 90 degree angles, flat lay, organized, clean background, overhead shot", desc: "Objetos organizados 90º.", s: [3,1,0,1,1,0,3,4,0,0] },
-    { id: "macro", group: "G6", name: "Macro Foto", prompt: "Macro photography, extreme close up, insect or dew drop, shallow depth of field, bokeh background, high detail", desc: "Primerísimo plano.", s: [4,1,3,1,3,1,4,3,0,0] },
-    { id: "fisheye", group: "G6", name: "Ojo de Pez", prompt: "Fisheye lens photography, distorted sphere perspective, skate video style, wide angle, immersive", desc: "Lente deformada.", s: [3,2,1,2,2,3,4,2,2,1] },
-    { id: "infrared", group: "G6", name: "Infrarrojo", prompt: "Infrared photography aerochrome, pink trees, surreal landscape, false color, dreamlike", desc: "Falso color, árboles rosas.", s: [5,2,4,3,3,2,5,2,0,0] },
-    { id: "doubleexpo", group: "G6", name: "Doble Exposición", prompt: "Double exposure photography, silhouette of a person filled with forest landscape, dreamlike, overlay", desc: "Silueta rellena de paisaje.", s: [3,1,5,3,5,4,4,3,0,0] },
-    { id: "glitch", group: "G6", name: "Glitch Art", prompt: "Data moshing glitch art, corrupted digital file, pixel sorting, chromatic distortion, noise", desc: "Error digital, corrupción.", s: [4,0,2,1,2,2,4,2,0,3] },
-    { id: "synthwave_land", group: "G6", name: "Synthwave", prompt: "Synthwave landscape, neon grid, sunset, retro 80s sci-fi, mountains, purple and orange gradient", desc: "Retro 80s, rejilla neón.", s: [5,3,2,5,1,1,5,4,0,0] },
-    { id: "glassmorphism", group: "G6", name: "Glassmorphism", prompt: "Glassmorphism UI style, frosted glass effect, blur background, translucent white layers, modern interface", desc: "Cristal esmerilado.", s: [3,1,0,1,1,0,2,5,0,0] },
-    { id: "isometric", group: "G6", name: "Isométrico", prompt: "3D isometric cute room, blender render, soft lighting, pastel colors, miniature diorama style", desc: "Diorama 3D.", s: [4,3,2,2,2,2,3,5,1,0] },
-    { id: "polaroid", group: "G6", name: "Polaroid", prompt: "Vintage polaroid photo, flash photography, white border, faded colors, nostalgic party snapshot", desc: "Foto instantánea, nostalgia.", s: [3,4,4,5,2,4,2,4,1,1] },
-    { id: "thermal", group: "G6", name: "Cámara Térmica", prompt: "Thermal camera imaging, heat map colors, predator vision, blue cold red hot, silhouette", desc: "Visión de calor.", s: [5,0,1,0,1,1,4,2,0,0] },
-    { id: "xray", group: "G6", name: "Rayos X", prompt: "X-ray styling, skeletal structure, transparent objects, blue and black monochrome, medical aesthetic", desc: "Transparencia, esqueleto.", s: [1,0,1,0,4,1,3,1,0,1] },
-    { id: "daguerreotype", group: "G6", name: "Daguerrotipo", prompt: "19th century daguerreotype photo, metallic sheen, scratches and dust, sepia black and white, ghost like long exposure", desc: "Foto antigua, fantasmal.", s: [1,0,4,5,4,2,3,1,0,0] },
-    { id: "oilrain", group: "G6", name: "Óleo Lluvia", prompt: "City street in rain, oil painting style, reflections on wet pavement, umbrella, cozy atmosphere", desc: "Calle lluviosa, reflejos.", s: [3,1,5,4,3,2,3,4,0,0] },
-    { id: "solarpunk", group: "G6", name: "Solarpunk", prompt: "Solarpunk city, futuristic art nouveau, greenery on buildings, solar panels, bright optimistic sunlight", desc: "Futuro verde, ecológico.", s: [4,4,3,1,3,2,4,3,0,0] },
-    { id: "darkacademia", group: "G6", name: "Dark Academia", prompt: "Dark academia aesthetic, old library, leather books, candle light, moody brown and plaid textures", desc: "Biblioteca, libros, misterio.", s: [2,0,3,4,4,2,2,4,0,0] },
-    { id: "frutigeraero", group: "G6", name: "Frutiger Aero", prompt: "Frutiger aero aesthetic, glossy water drops, grass field, blue sky, bubbles, 2000s tech utopianism", desc: "Estética 2000s, fresco.", s: [4,3,1,4,1,1,3,3,0,0] },
-    { id: "cottagecore", group: "G6", name: "Cottagecore", prompt: "Cottagecore aesthetic, cute cottage in woods, flowers, picnic, warm sunlight, peaceful rural life", desc: "Vida rural ideal.", s: [4,5,4,3,2,3,2,4,0,0] },
-    { id: "gothic", group: "G6", name: "Gótico", prompt: "Gothic architecture sketch, flying buttresses, pointed arches, detailed stone texture, dramatic angle", desc: "Arquitectura gótica.", s: [1,0,4,4,5,2,4,2,0,0] },
-    { id: "tattoo_trad", group: "G6", name: "Tatuaje Trad.", prompt: "American traditional tattoo style, bold black outlines, limited color palette, roses and daggers, sailor jerry", desc: "Old School, líneas gruesas.", s: [4,2,3,4,1,3,4,4,1,1] },
-    { id: "tattoo_irezumi", group: "G6", name: "Irezumi", prompt: "Japanese irezumi tattoo art, dragon and waves, wind bars background, vibrant colors on skin texture", desc: "Tatuaje japonés.", s: [4,1,3,4,3,3,4,3,0,0] },
-    { id: "cinematic", group: "G6", name: "Cine 8K", prompt: "Cinematic shot, 8k resolution, anamorphic lens flare, teal and orange grading, dramatic lighting, movie scene", desc: "Película taquillera.", s: [4,2,4,2,4,4,5,5,0,0] },
-    { id: "diorama", group: "G6", name: "Diorama", prompt: "Tilt-shift photography, miniature city, blur top and bottom, toy-like appearance, high saturation", desc: "Efecto maqueta.", s: [4,3,2,2,2,2,3,4,1,0] },
-    { id: "zombie", group: "G6", name: "Zombie", prompt: "Zombie apocalypse background, destroyed city, overgrown vegetation, gritty texture, desaturated green tones", desc: "Post-apocalipsis.", s: [1,0,5,1,3,4,4,4,0,2] },
-    { id: "fantasy_map", group: "G6", name: "Mapa Rol", prompt: "Fantasy rpg map, parchment texture, hand drawn mountains and forests, ink lines, compass rose", desc: "Mapa de fantasía.", s: [2,1,3,5,3,1,2,3,0,0] },
-    { id: "tarot", group: "G6", name: "Tarot", prompt: "Tarot card illustration, woodcut outlines, flat colors, symbolic, mystical, medieval influence", desc: "Místico, simbólico.", s: [3,1,3,5,4,2,3,3,0,1] }
-];
+            // G6: MATERIALES Y FOTO 3D
+            { id: "origami", group: "G6", name: "Origami", prompt: "Origami paper art, folded paper animals, sharp creases, geometric papercraft, soft studio lighting", desc: "Papel plegado, pliegues nítidos.", s: [3, 1, 1, 2, 2, 1, 2, 3, 0, 0] },
+            { id: "papercut", group: "G6", name: "Paper Cutout", prompt: "Layered paper cutout art, shadow box effect, depth layers, silhouette landscape, paper texture", desc: "Capas de papel, efecto caja.", s: [4, 2, 2, 3, 4, 2, 3, 3, 0, 0] },
+            { id: "clay", group: "G6", name: "Plastilina (Clay)", prompt: "Plasticine clay model, fingerprint textures, imperfect shapes, soft lighting, handmade aesthetic", desc: "Modelado a mano.", s: [4, 4, 2, 3, 2, 3, 3, 3, 2, 0] },
+            { id: "embroidery", group: "G6", name: "Bordado", prompt: "Embroidery art, stitched thread texture on fabric, patches, woven patterns, tactile feel", desc: "Hilo sobre tela, táctil.", s: [4, 2, 3, 4, 1, 2, 2, 2, 0, 0] },
+            { id: "stainedglass", group: "G6", name: "Vidriera Gótica", prompt: "Stained glass window, lead lines, glowing colored glass, religious or fantasy scene, light passing through", desc: "Cristalera, luz.", s: [5, 1, 4, 4, 3, 2, 4, 2, 0, 0] },
+            { id: "chalk", group: "G6", name: "Tiza en Pizarra", prompt: "Chalk drawing on blackboard, dusty texture, smudges, white and pastel chalk lines, cafe menu style", desc: "Dibujo en pizarra, polvo.", s: [2, 1, 2, 4, 1, 2, 2, 3, 0, 0] },
+            { id: "knolling", group: "G6", name: "Knolling", prompt: "Knolling photography, objects arranged at 90 degree angles, flat lay, organized, clean background, overhead shot", desc: "Objetos organizados 90º.", s: [3, 1, 0, 1, 1, 0, 3, 4, 0, 0] },
+            { id: "macro", group: "G6", name: "Macro Foto", prompt: "Macro photography, extreme close up, insect or dew drop, shallow depth of field, bokeh background, high detail", desc: "Primerísimo plano.", s: [4, 1, 3, 1, 3, 1, 4, 3, 0, 0] },
+            { id: "fisheye", group: "G6", name: "Ojo de Pez", prompt: "Fisheye lens photography, distorted sphere perspective, skate video style, wide angle, immersive", desc: "Lente deformada.", s: [3, 2, 1, 2, 2, 3, 4, 2, 2, 1] },
+            { id: "infrared", group: "G6", name: "Infrarrojo", prompt: "Infrared photography aerochrome, pink trees, surreal landscape, false color, dreamlike", desc: "Falso color, árboles rosas.", s: [5, 2, 4, 3, 3, 2, 5, 2, 0, 0] },
+            { id: "doubleexpo", group: "G6", name: "Doble Exposición", prompt: "Double exposure photography, silhouette of a person filled with forest landscape, dreamlike, overlay", desc: "Silueta rellena de paisaje.", s: [3, 1, 5, 3, 5, 4, 4, 3, 0, 0] },
+            { id: "glitch", group: "G6", name: "Glitch Art", prompt: "Data moshing glitch art, corrupted digital file, pixel sorting, chromatic distortion, noise", desc: "Error digital, corrupción.", s: [4, 0, 2, 1, 2, 2, 4, 2, 0, 3] },
+            { id: "synthwave_land", group: "G6", name: "Synthwave", prompt: "Synthwave landscape, neon grid, sunset, retro 80s sci-fi, mountains, purple and orange gradient", desc: "Retro 80s, rejilla neón.", s: [5, 3, 2, 5, 1, 1, 5, 4, 0, 0] },
+            { id: "glassmorphism", group: "G6", name: "Glassmorphism", prompt: "Glassmorphism UI style, frosted glass effect, blur background, translucent white layers, modern interface", desc: "Cristal esmerilado.", s: [3, 1, 0, 1, 1, 0, 2, 5, 0, 0] },
+            { id: "isometric", group: "G6", name: "Isométrico", prompt: "3D isometric cute room, blender render, soft lighting, pastel colors, miniature diorama style", desc: "Diorama 3D.", s: [4, 3, 2, 2, 2, 2, 3, 5, 1, 0] },
+            { id: "polaroid", group: "G6", name: "Polaroid", prompt: "Vintage polaroid photo, flash photography, white border, faded colors, nostalgic party snapshot", desc: "Foto instantánea, nostalgia.", s: [3, 4, 4, 5, 2, 4, 2, 4, 1, 1] },
+            { id: "thermal", group: "G6", name: "Cámara Térmica", prompt: "Thermal camera imaging, heat map colors, predator vision, blue cold red hot, silhouette", desc: "Visión de calor.", s: [5, 0, 1, 0, 1, 1, 4, 2, 0, 0] },
+            { id: "xray", group: "G6", name: "Rayos X", prompt: "X-ray styling, skeletal structure, transparent objects, blue and black monochrome, medical aesthetic", desc: "Transparencia, esqueleto.", s: [1, 0, 1, 0, 4, 1, 3, 1, 0, 1] },
+            { id: "daguerreotype", group: "G6", name: "Daguerrotipo", prompt: "19th century daguerreotype photo, metallic sheen, scratches and dust, sepia black and white, ghost like long exposure", desc: "Foto antigua, fantasmal.", s: [1, 0, 4, 5, 4, 2, 3, 1, 0, 0] },
+            { id: "oilrain", group: "G6", name: "Óleo Lluvia", prompt: "City street in rain, oil painting style, reflections on wet pavement, umbrella, cozy atmosphere", desc: "Calle lluviosa, reflejos.", s: [3, 1, 5, 4, 3, 2, 3, 4, 0, 0] },
+            { id: "solarpunk", group: "G6", name: "Solarpunk", prompt: "Solarpunk city, futuristic art nouveau, greenery on buildings, solar panels, bright optimistic sunlight", desc: "Futuro verde, ecológico.", s: [4, 4, 3, 1, 3, 2, 4, 3, 0, 0] },
+            { id: "darkacademia", group: "G6", name: "Dark Academia", prompt: "Dark academia aesthetic, old library, leather books, candle light, moody brown and plaid textures", desc: "Biblioteca, libros, misterio.", s: [2, 0, 3, 4, 4, 2, 2, 4, 0, 0] },
+            { id: "frutigeraero", group: "G6", name: "Frutiger Aero", prompt: "Frutiger aero aesthetic, glossy water drops, grass field, blue sky, bubbles, 2000s tech utopianism", desc: "Estética 2000s, fresco.", s: [4, 3, 1, 4, 1, 1, 3, 3, 0, 0] },
+            { id: "cottagecore", group: "G6", name: "Cottagecore", prompt: "Cottagecore aesthetic, cute cottage in woods, flowers, picnic, warm sunlight, peaceful rural life", desc: "Vida rural ideal.", s: [4, 5, 4, 3, 2, 3, 2, 4, 0, 0] },
+            { id: "gothic", group: "G6", name: "Gótico", prompt: "Gothic architecture sketch, flying buttresses, pointed arches, detailed stone texture, dramatic angle", desc: "Arquitectura gótica.", s: [1, 0, 4, 4, 5, 2, 4, 2, 0, 0] },
+            { id: "tattoo_trad", group: "G6", name: "Tatuaje Trad.", prompt: "American traditional tattoo style, bold black outlines, limited color palette, roses and daggers, sailor jerry", desc: "Old School, líneas gruesas.", s: [4, 2, 3, 4, 1, 3, 4, 4, 1, 1] },
+            { id: "tattoo_irezumi", group: "G6", name: "Irezumi", prompt: "Japanese irezumi tattoo art, dragon and waves, wind bars background, vibrant colors on skin texture", desc: "Tatuaje japonés.", s: [4, 1, 3, 4, 3, 3, 4, 3, 0, 0] },
+            { id: "cinematic", group: "G6", name: "Cine 8K", prompt: "Cinematic shot, 8k resolution, anamorphic lens flare, teal and orange grading, dramatic lighting, movie scene", desc: "Película taquillera.", s: [4, 2, 4, 2, 4, 4, 5, 5, 0, 0] },
+            { id: "diorama", group: "G6", name: "Diorama", prompt: "Tilt-shift photography, miniature city, blur top and bottom, toy-like appearance, high saturation", desc: "Efecto maqueta.", s: [4, 3, 2, 2, 2, 2, 3, 4, 1, 0] },
+            { id: "zombie", group: "G6", name: "Zombie", prompt: "Zombie apocalypse background, destroyed city, overgrown vegetation, gritty texture, desaturated green tones", desc: "Post-apocalipsis.", s: [1, 0, 5, 1, 3, 4, 4, 4, 0, 2] },
+            { id: "fantasy_map", group: "G6", name: "Mapa Rol", prompt: "Fantasy rpg map, parchment texture, hand drawn mountains and forests, ink lines, compass rose", desc: "Mapa de fantasía.", s: [2, 1, 3, 5, 3, 1, 2, 3, 0, 0] },
+            { id: "tarot", group: "G6", name: "Tarot", prompt: "Tarot card illustration, woodcut outlines, flat colors, symbolic, mystical, medieval influence", desc: "Místico, simbólico.", s: [3, 1, 3, 5, 4, 2, 3, 3, 0, 1] }
+        ];
 
-// UI CONSTANTS
-const qualities = ["Colorista", "Alegría", "Emocion", "Nostalgia", "Profundidad", "Expresion", "Impacto", "Popularidad", "Comicidad", "Ironia"];
-const slidersContainer = document.getElementById('sliders-container');
-const groupFiltersContainer = document.getElementById('group-filters');
-const grid = document.getElementById('grid');
+        // UI CONSTANTS
+        const qualities = ["Colorista", "Alegría", "Emocion", "Nostalgia", "Profundidad", "Expresion", "Impacto", "Popularidad", "Comicidad", "Ironia"];
+        const slidersContainer = document.getElementById('sliders-container');
+        const groupFiltersContainer = document.getElementById('group-filters');
+        const grid = document.getElementById('grid');
 
-// ESTADO
-let currentScores = new Array(10).fill(0);
-let activeGroups = new Set(); // Stores 'G1', 'G2', etc.
+        // ESTADO
+        let currentScores = new Array(10).fill(0);
+        let activeGroups = new Set(); // Stores 'G1', 'G2', etc.
 
-// INICIALIZACIÓN
-function init() {
-    // 1. Render Group Checkboxes
-    Object.keys(groups).forEach(key => {
-        let label = document.createElement('label');
-        label.className = 'checkbox-label';
-        label.innerHTML = `
+        // INICIALIZACIÓN
+        function init() {
+            // 1. Render Group Checkboxes
+            Object.keys(groups).forEach(key => {
+                let label = document.createElement('label');
+                label.className = 'checkbox-label';
+                label.innerHTML = `
             <input type="checkbox" value="${key}" onchange="toggleGroup('${key}')">
             ${groups[key]}
         `;
-        groupFiltersContainer.appendChild(label);
-    });
+                groupFiltersContainer.appendChild(label);
+            });
 
-    // 2. Render Sliders
-    qualities.forEach((q, i) => {
-        let div = document.createElement('div');
-        div.className = 'slider-group';
-        div.innerHTML = `
+            // 2. Render Sliders
+            qualities.forEach((q, i) => {
+                let div = document.createElement('div');
+                div.className = 'slider-group';
+                div.innerHTML = `
             <div class="slider-header">
                 <span>${q}</span>
                 <span id="val-${i}" class="slider-val">0</span>
             </div>
             <input type="range" min="0" max="5" value="0" oninput="updateScore(${i}, this.value)">
         `;
-        slidersContainer.appendChild(div);
-    });
+                slidersContainer.appendChild(div);
+            });
 
-    // 3. Initial Render
-    filterAndRender();
-}
+            // 3. Initial Render
+            filterAndRender();
+        }
 
-// LOGICA DE FILTRO DE GRUPO
-function toggleGroup(key) {
-    if (activeGroups.has(key)) {
-        activeGroups.delete(key);
-    } else {
-        activeGroups.add(key);
-    }
-    filterAndRender();
-}
-
-// LOGICA DE SLIDERS
-function updateScore(index, value) {
-    currentScores[index] = parseInt(value);
-    document.getElementById(`val-${index}`).innerText = value;
-    filterAndRender();
-}
-
-function resetAll() {
-    // Reset Sliders
-    currentScores.fill(0);
-    document.querySelectorAll('input[type="range"]').forEach(input => {
-        input.value = 0;
-        input.parentElement.querySelector('.slider-val').innerText = "0";
-    });
-    
-    // Reset Checkboxes
-    activeGroups.clear();
-    document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-    
-    filterAndRender();
-}
-
-// CORE LOGIC: FILTER + SORT
-function filterAndRender() {
-    // 1. Filter by Group (Si activeGroups está vacío, mostrar todo)
-    let filtered = styles.filter(item => {
-        if (activeGroups.size === 0) return true;
-        return activeGroups.has(item.group);
-    });
-
-    // 2. Sort by Scores (Distancia Euclidiana)
-    // Si todos los sliders son 0, mantenemos el orden original del array filtrado
-    let isDefaultSort = currentScores.every(s => s === 0);
-
-    let ranked;
-    if (isDefaultSort) {
-        ranked = filtered;
-    } else {
-        ranked = filtered.map(item => {
-            let diff = 0;
-            // Solo calculamos distancia en las cualidades que el usuario ha movido (>0)
-            // Esto permite que las que están a 0 no penalicen.
-            let activeQualitiesCount = 0;
-            
-            for (let i = 0; i < 10; i++) {
-                if (currentScores[i] > 0) {
-                    diff += Math.pow(item.s[i] - currentScores[i], 2);
-                    activeQualitiesCount++;
-                }
+        // LOGICA DE FILTRO DE GRUPO
+        function toggleGroup(key) {
+            if (activeGroups.has(key)) {
+                activeGroups.delete(key);
+            } else {
+                activeGroups.add(key);
             }
-            // Score bajo es mejor (menor distancia)
-            return { ...item, score: Math.sqrt(diff) };
-        });
+            filterAndRender();
+        }
 
-        ranked.sort((a, b) => a.score - b.score);
-    }
+        // LOGICA DE SLIDERS
+        function updateScore(index, value) {
+            currentScores[index] = parseInt(value);
+            document.getElementById(`val-${index}`).innerText = value;
+            filterAndRender();
+        }
 
-    renderGrid(ranked);
-}
+        function resetAll() {
+            // Reset Sliders
+            currentScores.fill(0);
+            document.querySelectorAll('input[type="range"]').forEach(input => {
+                input.value = 0;
+                input.parentElement.querySelector('.slider-val').innerText = "0";
+            });
 
-// RENDERIZADO
-function renderGrid(data) {
-    grid.innerHTML = "";
-    
-    if (data.length === 0) {
-        grid.innerHTML = `<div id="no-results">No se encontraron estilos con esta combinación.</div>`;
-        return;
-    }
+            // Reset Checkboxes
+            activeGroups.clear();
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
 
-    data.forEach(item => {
-        let div = document.createElement('div');
-        div.className = 'card';
-        let imgPath = `img/${item.id}.jpg`;
-        
-        // Tag del grupo
-        let groupName = groups[item.group].split(' ')[0]; // Nombre corto para el tag
+            filterAndRender();
+        }
 
-        // Match badge logic
-        let showMatch = !currentScores.every(s => s === 0) && item.score < 3.5; 
+        // CORE LOGIC: FILTER + SORT
+        function filterAndRender() {
+            // 1. Filter by Group (Si activeGroups está vacío, mostrar todo)
+            let filtered = styles.filter(item => {
+                if (activeGroups.size === 0) return true;
+                return activeGroups.has(item.group);
+            });
 
-        div.innerHTML = `
+            // 2. Sort by Scores (Distancia Euclidiana)
+            // Si todos los sliders son 0, mantenemos el orden original del array filtrado
+            let isDefaultSort = currentScores.every(s => s === 0);
+
+            let ranked;
+            if (isDefaultSort) {
+                ranked = filtered;
+            } else {
+                ranked = filtered.map(item => {
+                    let diff = 0;
+                    // Solo calculamos distancia en las cualidades que el usuario ha movido (>0)
+                    // Esto permite que las que están a 0 no penalicen.
+                    let activeQualitiesCount = 0;
+
+                    for (let i = 0; i < 10; i++) {
+                        if (currentScores[i] > 0) {
+                            diff += Math.pow(item.s[i] - currentScores[i], 2);
+                            activeQualitiesCount++;
+                        }
+                    }
+                    // Score bajo es mejor (menor distancia)
+                    return { ...item, score: Math.sqrt(diff) };
+                });
+
+                ranked.sort((a, b) => a.score - b.score);
+            }
+
+            renderGrid(ranked);
+        }
+
+        // RENDERIZADO
+        function renderGrid(data) {
+            grid.innerHTML = "";
+
+            if (data.length === 0) {
+                grid.innerHTML = `<div id="no-results">No se encontraron estilos con esta combinación.</div>`;
+                return;
+            }
+
+            data.forEach(item => {
+                let div = document.createElement('div');
+                div.className = 'card';
+                let imgPath = `img/${item.id}.jpg`;
+
+                // Tag del grupo
+                let groupName = groups[item.group].split(' ')[0]; // Nombre corto para el tag
+
+                // Match badge logic
+                let showMatch = !currentScores.every(s => s === 0) && item.score < 3.5;
+
+                div.innerHTML = `
             <div class="img-box">
                 <img src="${imgPath}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" alt="${item.name}" loading="lazy">
                 <div class="missing" style="display:none">
@@ -398,18 +672,19 @@ function renderGrid(data) {
                 </div>
             </div>
         `;
-        grid.appendChild(div);
-    });
-}
+                grid.appendChild(div);
+            });
+        }
 
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        // Feedback visual sutil (opcional)
-        // alert('Prompt copiado'); 
-    });
-}
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Feedback visual sutil (opcional)
+                // alert('Prompt copiado'); 
+            });
+        }
 
-init();
-</script>
+        init();
+    </script>
 </body>
+
 </html>
