@@ -3,12 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Catálogo Maestro Antigravity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Maestro Antigravity - Más de 100estilos</title>
     <style>
-        /* --- CORE --- */
-        *, *::before, *::after { box-sizing: border-box; } /* LA CLAVE DEL ARREGLO */
-
         :root {
             --bg: #121212;
             --card: #1e1e1e;
@@ -16,7 +13,6 @@
             --accent: #ffcc00;
             --accent-dim: #997a00;
             --border: #333;
-            --nav-height: 60px;
         }
 
         body {
@@ -30,7 +26,7 @@
             overflow: hidden;
         }
 
-        /* --- SIDEBAR (PC) / PANTALLA FILTROS (MÓVIL) --- */
+        /* SIDEBAR */
         #sidebar {
             width: 320px;
             background: var(--card);
@@ -39,8 +35,7 @@
             flex-direction: column;
             flex-shrink: 0;
             box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
-            z-index: 20;
-            transition: transform 0.3s ease;
+            z-index: 10;
         }
 
         .sidebar-header {
@@ -49,152 +44,340 @@
             background: #1a1a1a;
         }
 
-        .sidebar-header h2 { margin: 0; font-size: 1.2rem; color: #fff; letter-spacing: 1px; }
-        .sidebar-header p { margin: 5px 0 0; font-size: 0.8rem; color: #888; }
+        .sidebar-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-header p {
+            margin: 5px 0 0;
+            font-size: 0.8rem;
+            color: #888;
+        }
 
         .scroll-area {
             overflow-y: auto;
             flex: 1;
             padding: 20px;
-            -webkit-overflow-scrolling: touch; 
             scrollbar-width: thin;
             scrollbar-color: var(--border) var(--bg);
-            padding-bottom: 80px;
         }
 
-        /* --- FILTROS --- */
-        .filter-section { margin-bottom: 25px; }
-        .section-title { font-size: 0.75rem; text-transform: uppercase; color: var(--accent); font-weight: bold; margin-bottom: 10px; letter-spacing: 1px; display: block; }
-        .checkbox-group { display: flex; flex-direction: column; gap: 8px; }
-        .checkbox-label { display: flex; align-items: center; cursor: pointer; font-size: 0.9rem; transition: color 0.2s; padding: 6px 0; }
-        .checkbox-label:hover { color: #fff; }
-        .checkbox-label input { margin-right: 15px; accent-color: var(--accent); transform: scale(1.3); cursor: pointer; }
+        /* SECCIÓN: CATEGORÍAS (CHECKBOXES) */
+        .filter-section {
+            margin-bottom: 25px;
+        }
 
-        /* --- SLIDERS --- */
-        .slider-group { margin-bottom: 15px; }
-        .slider-header { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px; color: #ccc; }
-        .slider-val { color: var(--accent); font-weight: bold; }
-        input[type="range"] { width: 100%; height: 6px; background: #444; border-radius: 3px; -webkit-appearance: none; cursor: grab; }
-        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; background: var(--text); border-radius: 50%; border: 2px solid var(--accent); transition: background 0.2s; }
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            display: block;
+        }
 
-        /* --- FOOTER SIDEBAR --- */
-        .sidebar-footer { padding: 20px; border-top: 1px solid var(--border); background: #1a1a1a; text-align: center; }
-        button#reset { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 12px 16px; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.2s; width: 100%; font-size: 1rem; }
-        button#reset:hover { background: var(--accent); color: #000; }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-        /* --- MAIN AREA (RESULTADOS) --- */
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            padding: 4px 0;
+        }
+
+        .checkbox-label:hover {
+            color: #fff;
+        }
+
+        .checkbox-label input {
+            margin-right: 10px;
+            accent-color: var(--accent);
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        /* SECCIÓN: SLIDERS */
+        .slider-group {
+            margin-bottom: 12px;
+        }
+
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+            color: #ccc;
+        }
+
+        .slider-val {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 4px;
+            background: #444;
+            border-radius: 2px;
+            -webkit-appearance: none;
+            cursor: grab;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--text);
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            transition: background 0.2s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: var(--accent);
+        }
+
+        /* FOOTER SIDEBAR */
+        .sidebar-footer {
+            padding: 20px;
+            border-top: 1px solid var(--border);
+            background: #1a1a1a;
+            text-align: center;
+        }
+
+        button#reset {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+            width: 100%;
+        }
+
+        button#reset:hover {
+            background: var(--accent);
+            color: #000;
+        }
+
+        /* GRID PRINCIPAL */
         #main-area {
             flex: 1;
             padding: 20px;
             overflow-y: auto;
             background: var(--bg);
             position: relative;
-            -webkit-overflow-scrolling: touch;
         }
 
         #grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 20px;
-            padding-bottom: 80px;
+            padding-bottom: 40px;
         }
 
-        /* --- TARJETAS --- */
-        .card { background: #252525; border-radius: 8px; overflow: hidden; border: 1px solid #333; display: flex; flex-direction: column; transition: transform 0.2s; position: relative; }
-        .img-box { height: 160px; background: #000; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .tag-group { position: absolute; top: 8px; left: 8px; background: rgba(0, 0, 0, 0.7); color: #fff; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; text-transform: uppercase; border: 1px solid #555; }
-        .score-match { position: absolute; top: 8px; right: 8px; background: var(--accent); color: #000; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
-        .info { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
-        .info h3 { margin: 0; font-size: 1rem; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .info p { margin: 0; font-size: 0.8rem; color: #aaa; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .prompt-box { background: #111; padding: 8px; border-radius: 4px; margin-top: auto; border: 1px solid #333; cursor: pointer; position: relative; }
-        .prompt-text { font-family: monospace; font-size: 0.75rem; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
-        @media (hover: hover) {
-            .prompt-tooltip { display: none; position: absolute; bottom: 100%; left: 0; right: 0; background: #222; border: 1px solid var(--accent); color: #ddd; padding: 8px; font-size: 0.75rem; z-index: 20; border-radius: 4px; white-space: normal; }
-            .prompt-box:hover .prompt-tooltip { display: block; }
+        /* TARJETAS */
+        .card {
+            background: #252525;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
         }
 
-        /* --- NAVEGACIÓN MÓVIL --- */
-        #mobile-nav { display: none; position: fixed; bottom: 0; left: 0; width: 100%; height: var(--nav-height); background: #1a1a1a; border-top: 1px solid var(--accent); z-index: 100; justify-content: space-around; align-items: center; box-shadow: 0 -5px 20px rgba(0,0,0,0.5); }
-        .nav-btn { background: none; border: none; color: #888; font-size: 0.9rem; font-weight: bold; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 50%; height: 100%; cursor: pointer; }
-        .nav-btn.active { color: var(--accent); background: #252525; }
-        .nav-btn span { margin-top: 4px; font-size: 1.2rem; }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent-dim);
+        }
 
-        /* --- RESPONSIVE DESIGN (MÓVIL) --- */
-        @media (max-width: 768px) {
-            body { display: block; position: relative; }
-            
-            #sidebar {
-                position: fixed; top: 0; left: 0; width: 100%; height: calc(100vh - var(--nav-height));
-                border-right: none; transform: translateX(-100%); visibility: hidden; transition: transform 0.3s ease, visibility 0.3s;
-            }
-            #sidebar.active-view { transform: translateX(0); visibility: visible; }
+        .img-box {
+            height: 160px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            #main-area {
-                width: 100%; height: calc(100vh - var(--nav-height));
-                display: none; padding: 15px; /* Padding equilibrado */
-            }
-            #main-area.active-view { display: block; }
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
 
-            #mobile-nav { display: flex; }
+        .missing {
+            color: #555;
+            font-size: 0.7rem;
+            text-align: center;
+            line-height: 1.4;
+            padding: 10px;
+        }
 
-            #grid { 
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
-                gap: 15px; 
-                justify-content: center; /* CENTRADO EXTRA */
-            }
-            .img-box { height: 140px; }
+        .tag-group {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            border: 1px solid #555;
+        }
+
+        .score-match {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--accent);
+            color: #000;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .info {
+            padding: 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .info h3 {
+            margin: 0;
+            font-size: 1rem;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .info p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #aaa;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .prompt-box {
+            background: #111;
+            padding: 6px;
+            border-radius: 4px;
+            margin-top: auto;
+            border: 1px solid #333;
+            cursor: pointer;
+            transition: border-color 0.2s;
+            position: relative;
+        }
+
+        .prompt-box:hover {
+            border-color: var(--accent);
+        }
+
+        .prompt-text {
+            font-family: monospace;
+            font-size: 0.7rem;
+            color: var(--accent);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+        }
+
+        .prompt-tooltip {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            background: #222;
+            border: 1px solid var(--accent);
+            color: #ddd;
+            padding: 8px;
+            font-size: 0.75rem;
+            z-index: 20;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            white-space: normal;
+        }
+
+        .prompt-box:hover .prompt-tooltip {
+            display: block;
+        }
+
+        /* Empty State */
+        #no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 50px;
+            color: #666;
+            font-style: italic;
         }
     </style>
 </head>
 
 <body>
 
-    <aside id="sidebar" class="view-panel">
+    <aside id="sidebar">
         <div class="sidebar-header">
             <h2>Antigravity<span style="color:var(--accent)">Catalog</span></h2>
-            <p>Configura tu búsqueda</p>
+            <p>Más de 100 Estilos Maestros</p>
         </div>
 
         <div class="scroll-area">
             <div class="filter-section">
-                <span class="section-title">1. Selecciona Grupos</span>
+                <span class="section-title">Filtrar por Grupo</span>
                 <div id="group-filters" class="checkbox-group">
-                    </div>
+                </div>
             </div>
 
             <hr style="border:0; border-top:1px solid #333; margin: 20px 0;">
 
             <div class="filter-section">
-                <span class="section-title">2. Afina el Estilo (0-5)</span>
+                <span class="section-title">Afinar por Cualidad (0-5)</span>
                 <div id="sliders-container">
-                    </div>
+                </div>
             </div>
-            
-            <div style="height: 40px;"></div>
         </div>
 
         <div class="sidebar-footer">
-            <button id="reset" onclick="resetAll()">🗑️ Resetear Filtros</button>
+            <button id="reset" onclick="resetAll()">Resetear Filtros</button>
         </div>
     </aside>
 
-    <main id="main-area" class="view-panel active-view">
+    <main id="main-area">
         <div id="grid"></div>
     </main>
 
-    <nav id="mobile-nav">
-        <button class="nav-btn" id="btn-filters" onclick="switchView('filters')">
-            <span>⚙️</span> Filtros
-        </button>
-        <button class="nav-btn active" id="btn-results" onclick="switchView('results')">
-            <span>🖼️</span> Galería
-        </button>
-    </nav>
-
     <script>
-        // --- DATOS MAESTROS ---
+        // --- DATOS MAESTROS (150 Estilos con Grupos Asignados) ---
+        // G1: Pintura, G2: Cómic, G3: Diseño, G4: Mensaje, G5: Cine/Anim, G6: Materiales
         const groups = {
             G1: "Maestros de la Pintura",
             G2: "Cómic y Manga",
@@ -226,6 +409,7 @@
             { id: "goya", group: "G1", name: "Francisco de Goya", prompt: "Black paintings by Goya, dark atmosphere, grotesque faces, haunting expressionism, loose brushwork", desc: "Pinturas negras, atmósfera oscura.", s: [1, 0, 5, 3, 5, 5, 4, 4, 1, 2] },
             { id: "modigliani", group: "G1", name: "Amedeo Modigliani", prompt: "Portrait by Modigliani, elongated necks, blank eyes, warm tones, bohemian style, linear elegance", desc: "Figuras alargadas, ojos vacíos.", s: [3, 1, 3, 4, 2, 3, 3, 3, 0, 0] },
             { id: "seurat", group: "G1", name: "Georges Seurat", prompt: "Pointillism painting by Seurat, composed of millions of tiny dots, optical color mixing, sunday afternoon park", desc: "Puntillismo, mezcla óptica.", s: [4, 3, 1, 3, 2, 2, 3, 4, 0, 0] },
+
             // G2: CÓMIC
             { id: "moebius", group: "G2", name: "Moebius", prompt: "Sci-fi illustration by Moebius, ligne claire, desert fantasy, pastel colors, intricate line work", desc: "Línea clara, sci-fi onírico.", s: [4, 2, 3, 4, 5, 3, 4, 4, 1, 1] },
             { id: "herge", group: "G2", name: "Hergé", prompt: "Ligne claire style of Hergé, flat colors, clean black outlines, minimal shadows, comic book art", desc: "Línea clara pura, muy legible.", s: [3, 3, 1, 4, 1, 2, 3, 5, 2, 0] },
@@ -247,6 +431,7 @@
             { id: "breccia", group: "G2", name: "Alberto Breccia", prompt: "Alberto Breccia comic style, experimental collage, high contrast ink, expressionist horror, texture mix", desc: "Experimental, collage, terror.", s: [0, 0, 5, 2, 5, 5, 4, 2, 0, 2] },
             { id: "romita", group: "G2", name: "John Romita Sr", prompt: "Classic Spiderman comic style, romance comic influence, beautiful faces, silver age marvel, bold primary colors", desc: "Marvel clásico, rostros bellos.", s: [5, 3, 2, 5, 2, 3, 3, 4, 1, 0] },
             { id: "quino", group: "G2", name: "Quino", prompt: "Quino cartoon style, mafalda, simple ink lines, crosshatching backgrounds, social satire, cute but cynical", desc: "Humor gráfico, sátira social.", s: [1, 3, 2, 4, 2, 3, 2, 5, 5, 5] },
+
             // G3: DISEÑO
             { id: "bauhaus", group: "G3", name: "Bauhaus", prompt: "Bauhaus design poster, geometric shapes, function over form, primary colors, diagonal typography, minimalist", desc: "Funcionalismo, geometría.", s: [3, 1, 1, 3, 2, 1, 4, 4, 0, 0] },
             { id: "mucha", group: "G3", name: "Alphonse Mucha", prompt: "Art Nouveau poster by Alphonse Mucha, floral patterns, flowing hair, pastel colors, elegant lines", desc: "Art Nouveau, elegancia floral.", s: [4, 3, 2, 5, 1, 3, 3, 4, 0, 0] },
@@ -268,6 +453,7 @@
             { id: "pixelart", group: "G3", name: "Pixel Art", prompt: "16-bit pixel art, SNES video game style, dithering, limited color palette, nostalgic game sprite", desc: "Retro gaming, sprites.", s: [4, 4, 2, 5, 1, 2, 3, 5, 3, 1] },
             { id: "lowpoly", group: "G3", name: "Low Poly", prompt: "Low poly 3D render, geometric facets, minimalist landscape, flat lighting, pastel colors, sharp edges", desc: "3D poligonal, minimalismo.", s: [3, 2, 1, 1, 2, 1, 3, 3, 0, 0] },
             { id: "flatdesign", group: "G3", name: "Flat Design", prompt: "Corporate flat design illustration, vector art, faceless characters, solid colors, clean minimalism, tech startup", desc: "Vectorial corporativo, simple.", s: [3, 2, 0, 0, 0, 1, 2, 5, 0, 0] },
+
             // G4: ARTE MENSAJE
             { id: "banksy", group: "G4", name: "Banksy", prompt: "Banksy stencil art on brick wall, black spray paint, red accent, political satire, street art graffiti", desc: "Stencil callejero, sátira.", s: [1, 0, 4, 1, 3, 4, 5, 5, 2, 5] },
             { id: "fairey", group: "G4", name: "Shepard Fairey", prompt: "Shepard Fairey propaganda poster style, vector portrait, red beige and blue palette, bold typography, hope poster", desc: "Estilo 'Hope', vectorizado.", s: [3, 1, 3, 3, 2, 3, 5, 4, 0, 2] },
@@ -279,6 +465,7 @@
             { id: "botero", group: "G4", name: "Fernando Botero", prompt: "Fernando Botero style painting, volumetry, exaggerated fat figures, satire, smooth texture, still life", desc: "Volumen exagerado, sátira.", s: [3, 2, 1, 2, 2, 3, 4, 4, 3, 2] },
             { id: "wildstyle", group: "G4", name: "Graffiti Wildstyle", prompt: "Wildstyle graffiti lettering, interlocking letters, arrows, vibrant colors, spray paint texture, urban wall", desc: "Graffiti complejo, letras.", s: [5, 2, 3, 1, 2, 4, 4, 3, 0, 1] },
             { id: "stickerbomb", group: "G4", name: "Sticker Bomb", prompt: "Sticker bombing texture, overlapping street stickers, pop culture logos, chaotic, grunge aesthetic", desc: "Pegatinas superpuestas, caos.", s: [5, 3, 1, 2, 1, 2, 3, 2, 2, 2] },
+
             // G5: CINE Y ANIMACIÓN
             { id: "ghibli", group: "G5", name: "Studio Ghibli", prompt: "Studio Ghibli anime style, lush painted background, food illustration, detailed clouds, peaceful atmosphere", desc: "Fondos detallados, paz.", s: [4, 4, 5, 4, 3, 4, 3, 5, 1, 0] },
             { id: "pixar", group: "G5", name: "Pixar 3D", prompt: "Pixar 3D animation style, soft lighting, subsurface scattering, expressive characters, clean render, vibrant", desc: "CGI alta calidad, suave.", s: [5, 5, 4, 2, 3, 5, 4, 5, 4, 0] },
@@ -300,6 +487,7 @@
             { id: "giger", group: "G5", name: "H.R. Giger", prompt: "Biomechanical art by H.R. Giger, alien structures, monochrome, airbrush texture, metallic and organic mix", desc: "Biomecánico, alienígena.", s: [0, 0, 5, 1, 5, 3, 5, 4, 0, 0] },
             { id: "lego", group: "G5", name: "Lego / Voxel", prompt: "Lego brick construction, voxel art style, plastic glossy texture, toy photography, depth of field", desc: "Bloques tipo Lego.", s: [5, 5, 1, 3, 1, 2, 3, 5, 2, 1] },
             { id: "muppets", group: "G5", name: "Muppets", prompt: "Jim Henson muppet style, felt texture, fur, goofy eyes, puppet photography, studio lighting", desc: "Marionetas, textura fieltro.", s: [4, 5, 3, 4, 1, 5, 3, 4, 5, 2] },
+
             // G6: MATERIALES Y FOTO 3D
             { id: "origami", group: "G6", name: "Origami", prompt: "Origami paper art, folded paper animals, sharp creases, geometric papercraft, soft studio lighting", desc: "Papel plegado, pliegues nítidos.", s: [3, 1, 1, 2, 2, 1, 2, 3, 0, 0] },
             { id: "papercut", group: "G6", name: "Paper Cutout", prompt: "Layered paper cutout art, shadow box effect, depth layers, silhouette landscape, paper texture", desc: "Capas de papel, efecto caja.", s: [4, 2, 2, 3, 4, 2, 3, 3, 0, 0] },
@@ -352,9 +540,9 @@
                 let label = document.createElement('label');
                 label.className = 'checkbox-label';
                 label.innerHTML = `
-                    <input type="checkbox" value="${key}" onchange="toggleGroup('${key}')">
-                    ${groups[key]}
-                `;
+            <input type="checkbox" value="${key}" onchange="toggleGroup('${key}')">
+            ${groups[key]}
+        `;
                 groupFiltersContainer.appendChild(label);
             });
 
@@ -363,12 +551,12 @@
                 let div = document.createElement('div');
                 div.className = 'slider-group';
                 div.innerHTML = `
-                    <div class="slider-header">
-                        <span>${q}</span>
-                        <span id="val-${i}" class="slider-val">0</span>
-                    </div>
-                    <input type="range" min="0" max="5" value="0" oninput="updateScore(${i}, this.value)">
-                `;
+            <div class="slider-header">
+                <span>${q}</span>
+                <span id="val-${i}" class="slider-val">0</span>
+            </div>
+            <input type="range" min="0" max="5" value="0" oninput="updateScore(${i}, this.value)">
+        `;
                 slidersContainer.appendChild(div);
             });
 
@@ -410,27 +598,36 @@
 
         // CORE LOGIC: FILTER + SORT
         function filterAndRender() {
-            // 1. Filter by Group
+            // 1. Filter by Group (Si activeGroups está vacío, mostrar todo)
             let filtered = styles.filter(item => {
                 if (activeGroups.size === 0) return true;
                 return activeGroups.has(item.group);
             });
 
             // 2. Sort by Scores (Distancia Euclidiana)
+            // Si todos los sliders son 0, mantenemos el orden original del array filtrado
             let isDefaultSort = currentScores.every(s => s === 0);
+
             let ranked;
             if (isDefaultSort) {
                 ranked = filtered;
             } else {
                 ranked = filtered.map(item => {
                     let diff = 0;
+                    // Solo calculamos distancia en las cualidades que el usuario ha movido (>0)
+                    // Esto permite que las que están a 0 no penalicen.
+                    let activeQualitiesCount = 0;
+
                     for (let i = 0; i < 10; i++) {
                         if (currentScores[i] > 0) {
                             diff += Math.pow(item.s[i] - currentScores[i], 2);
+                            activeQualitiesCount++;
                         }
                     }
+                    // Score bajo es mejor (menor distancia)
                     return { ...item, score: Math.sqrt(diff) };
                 });
+
                 ranked.sort((a, b) => a.score - b.score);
             }
 
@@ -442,7 +639,7 @@
             grid.innerHTML = "";
 
             if (data.length === 0) {
-                grid.innerHTML = `<div id="no-results" style="grid-column:1/-1; text-align:center; padding:50px; color:#666;">No hay estilos con esa combinación.</div>`;
+                grid.innerHTML = `<div id="no-results">No se encontraron estilos con esta combinación.</div>`;
                 return;
             }
 
@@ -450,63 +647,44 @@
                 let div = document.createElement('div');
                 div.className = 'card';
                 let imgPath = `img/${item.id}.jpg`;
-                let groupName = groups[item.group].split(' ')[0]; 
+
+                // Tag del grupo
+                let groupName = groups[item.group].split(' ')[0]; // Nombre corto para el tag
 
                 // Match badge logic
                 let showMatch = !currentScores.every(s => s === 0) && item.score < 3.5;
 
                 div.innerHTML = `
-                    <div class="img-box">
-                        <img src="${imgPath}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" alt="${item.name}" loading="lazy">
-                        <div class="missing" style="display:none; color:#555; text-align:center; font-size:0.7rem; padding:10px;">
-                            NO IMG<br><b>${item.id}</b>
-                        </div>
-                        <div class="tag-group">${groupName}</div>
-                        ${showMatch ? `<div class="score-match">TOP</div>` : ''}
-                    </div>
-                    <div class="info">
-                        <h3>${item.name}</h3>
-                        <p>${item.desc}</p>
-                        <div class="prompt-box" onclick="copyToClipboard('${item.prompt.replace(/'/g, "\\'")}')">
-                            <span class="prompt-text">Prompt: ${item.prompt}</span>
-                            <div class="prompt-tooltip">Click para copiar: ${item.prompt}</div>
-                        </div>
-                    </div>
-                `;
+            <div class="img-box">
+                <img src="${imgPath}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" alt="${item.name}" loading="lazy">
+                <div class="missing" style="display:none">
+                    NO IMG<br><b>${item.id}</b>
+                </div>
+                <div class="tag-group">${groupName}</div>
+                ${showMatch ? `<div class="score-match">TOP</div>` : ''}
+            </div>
+            <div class="info">
+                <h3>${item.name}</h3>
+                <p>${item.desc}</p>
+                <div class="prompt-box" onclick="copyToClipboard('${item.prompt.replace(/'/g, "\\'")}')">
+                    <span class="prompt-text">Prompt: ${item.prompt}</span>
+                    <div class="prompt-tooltip">Click para copiar:<br>${item.prompt}</div>
+                </div>
+            </div>
+        `;
                 grid.appendChild(div);
             });
         }
 
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
-                // Feedback visual
+                // Feedback visual sutil (opcional)
+                // alert('Prompt copiado'); 
             });
-        }
-
-        // --- FUNCIONES MÓVIL ---
-        function switchView(viewName) {
-            // Solo hace algo en móvil (donde el nav es visible)
-            if (window.innerWidth > 768) return;
-
-            const sidebar = document.getElementById('sidebar');
-            const main = document.getElementById('main-area');
-            const btnFilters = document.getElementById('btn-filters');
-            const btnResults = document.getElementById('btn-results');
-
-            if (viewName === 'filters') {
-                sidebar.classList.add('active-view');
-                main.classList.remove('active-view');
-                btnFilters.classList.add('active');
-                btnResults.classList.remove('active');
-            } else {
-                sidebar.classList.remove('active-view');
-                main.classList.add('active-view');
-                btnFilters.classList.remove('active');
-                btnResults.classList.add('active');
-            }
         }
 
         init();
     </script>
 </body>
+
 </html>
