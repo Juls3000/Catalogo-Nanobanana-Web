@@ -375,11 +375,26 @@
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: calc(100vh - var(--nav-height));
+
+                /* CAMBIO CLAVE: En vez de height calculation, usamos bottom */
+                height: auto;
+                bottom: var(--nav-height);
+                /* Se detiene justo donde empieza la barra nav */
+
                 border-right: none;
                 transform: translateX(-100%);
                 visibility: hidden;
                 transition: transform 0.3s ease, visibility 0.3s;
+
+                /* Aseguramos que el botón Reset tenga espacio extra para respirar */
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* AÑADE ESTO: Un poco de aire extra al botón en móvil */
+            .sidebar-footer {
+                padding-bottom: 30px;
+                /* Levantamos el botón por si acaso */
             }
 
             #sidebar.active-view {
@@ -389,10 +404,16 @@
 
             #main-area {
                 width: 100%;
-                height: calc(100vh - var(--nav-height));
+                /* Lo mismo aquí para la galería */
+                height: auto;
+                position: absolute;
+                top: 0;
+                bottom: var(--nav-height);
+
                 display: none;
                 padding: 15px;
-                /* Padding equilibrado */
+                overflow-y: auto;
+                /* Scroll interno seguro */
             }
 
             #main-area.active-view {
@@ -407,7 +428,8 @@
                 grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
                 gap: 15px;
                 justify-content: center;
-                /* CENTRADO EXTRA */
+                padding-bottom: 40px;
+                /* Margen final galería */
             }
 
             .img-box {
