@@ -1,0 +1,16 @@
+Con ayuda de Nano Banana Pro hazme un catalogo de 50 ejemplos de estilos gráficos que me permita, de una hojeada, conocer el estilo que quiero en la imagen que busco. No te limites a pintores, incluye tambien grafistas, autores de comics, story board, dibujos con mensaje y creadores publicitarios. Lo mas relevante de cada area. Cada uno de los 50 ejemplos ha de incluir el modo de nombrarlo en el prompt, una pequeña descripción del ejemplo y una imagen del ejemplo.
+
+Prohibido que alguno de estos ejemplos carezca del correspondiente grafico
+
+En el inicio incluye un buscador de ejemplos que se base en puntuaciones de 0 a 5 de las siguientes cualidades (usa desplegables con UI inicialmente todo a 0):
+
+Colorista
+Alegría
+Emocion
+Nostalgia
+Profundidad
+Expresion
+Impacto visual
+Popularidad / estilo reconocible
+Comicidad
+Ironia
